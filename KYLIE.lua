@@ -678,7 +678,7 @@ end
 function Addmp3(msg,chat,kkl,ffrr)
 local eer = json:decode(https.request('https://api.telegram.org/bot'.. token..'/getfile?file_id='..kkl)) 
 download_to_file('https://api.telegram.org/file/bot'..token..'/'..eer.result.file_path,ffrr) 
-sendAudio(msg.chat_id_,msg.id_,'./'..ffrr,"𝙆𝙮𝙡𝙞𝙚 💥")  
+sendAudio(msg.chat_id_,msg.id_,'./'..ffrr,"𝙆𝙮𝙡𝙞𝙚 ")  
 os.execute('rm -rf ./'..ffrr) 
 end
 function Addsticker(msg,chat,Sd,rre)
@@ -1146,7 +1146,7 @@ local updatech =[[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/BBI9B"}},
+{{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/BBI9B"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(updatech).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -2632,7 +2632,7 @@ end
 end,nil)  
 end
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then       
-Text = "𝙒𝙀𝙇𝘾𝙊𝙈𝙀 𝙏𝙊 𝙆𝙮𝙡𝙞𝙚\n\n[𝘾𝙝𝙖𝙣𝙣𝙚𝙡 𝙆𝙮𝙡𝙞𝙚 💥](http://t.me/ppppd)"
+Text = "𝙒𝙀𝙇𝘾𝙊𝙈𝙀 𝙏𝙊 𝙆𝙮𝙡𝙞𝙚\n\n[𝘾𝙝𝙖𝙣𝙣𝙚𝙡 𝙆𝙮𝙡𝙞𝙚 ](http://t.me/ppppd)\n\n[𝙊𝙫𝙖](http://t.me/P222P)\n\n[𝙏𝙬𝙨 𝙎𝙤𝙪𝙧𝙘𝙚](http://t.me/Yv4BoT)"
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '𝘿𝙚𝙫 𝙆𝙮𝙡𝙞𝙚 .',url="https://t.me/PPPPZ"}},
@@ -8055,7 +8055,7 @@ local text =
 ' }\n'..' ꙳.︙  الايدي » { '..idgp..
 ' }\n'..' ꙳.︙  الايدي بالصوره » { '..idph..
 ' }\n'..' ꙳.︙  الرفع » { '..setadd..
-' }\n'..' ꙳.︙  الحظر » { '..banm..' }\n\n⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆\n ꙳.︙ قناة سورس كايلي ↓\n [━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd) \n'
+' }\n'..' ꙳.︙  الحظر » { '..banm..' }\n\n⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆\n ꙳.︙ قناة سورس كايلي ↓\n [𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd) \n'
 send(msg.chat_id_, msg.id_,text)     
 end
 if text ==('تثبيت') and msg.reply_to_message_id_ ~= 0 and Mod(msg) then  
@@ -8169,14 +8169,14 @@ end
 if text == "تفعيل رابط" or text == 'تفعيل الرابط' then
 if Mod(msg) then  
 database:set(bot_id.."Link_Group:status"..msg.chat_id_,true) 
-send(msg.chat_id_, msg.id_,"꙳.︙ تم تفعيل الرابط ✓") 
+send(msg.chat_id_, msg.id_,"꙳.︙ تم تفعيل الرابط ") 
 return false  
 end
 end
 if text == "تعطيل رابط" or text == 'تعطيل الرابط' then
 if Mod(msg) then  
 database:del(bot_id.."Link_Group:status"..msg.chat_id_) 
-send(msg.chat_id_, msg.id_,"꙳.︙ تم تعطيل الرابط ✘") 
+send(msg.chat_id_, msg.id_,"꙳.︙ تم تعطيل الرابط ") 
 return false end
 end
 if text == 'المطور' or text == 'مطور' then
@@ -8207,17 +8207,17 @@ end
 if text == "الرابط" then 
 local status_Link = database:get(bot_id.."Link_Group:status"..msg.chat_id_)
 if not status_Link then
-send(msg.chat_id_, msg.id_,"الرابط معطل ✘") 
+send(msg.chat_id_, msg.id_,"الرابط معطل") 
 return false  
 end
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,ta) 
 local link = database:get(bot_id.."Private:Group:Link"..msg.chat_id_)            
 if link then                              
-send(msg.chat_id_,msg.id_,'- 𝙇𝙞𝙣𝙠 ⇩\n≪━━━𝙎𝙉━━━≫\n ['..ta.title_..']('..link..')')                          
+send(msg.chat_id_,msg.id_,'- 𝙇𝙞𝙣𝙠 ⇩\n≪━━━𝙆𝙮━━━≫\n ['..ta.title_..']('..link..')')                          
 else                
 local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..token..'/exportChatInviteLink?chat_id='..msg.chat_id_))
 if linkgpp.ok == true then 
-linkgp = '- 𝙇𝙞𝙣𝙠 ⇩\n≪━━━𝙎𝙉━━━≫\n ['..ta.title_..']('..linkgpp.result..')'
+linkgp = '- 𝙇𝙞𝙣𝙠 ⇩\n≪━━━𝙆𝙮━━━≫\n ['..ta.title_..']('..linkgpp.result..')'
 else
 linkgp = 'لا يوجد رابط ارسل ` ضع رابط` لعمل رابط'
 end  
@@ -9872,7 +9872,7 @@ if audios.Info == true then
 local Text ='꙳.︙تم اختيار المقطع الصوتي لك'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '━𝙆𝙮𝙡𝙞𝙚━',url="t.me/ppppd"}},
+{{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚',url="t.me/ppppd"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -11180,7 +11180,7 @@ local Text =[[
 *⑼◂ اوامر مطور الاساسي .*
 *⑽◂ اوامر الاعضاء .*
 *⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆*
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. .[𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11197,7 +11197,7 @@ keyboard.inline_keyboard = {
 {text = '⑼', callback_data="/help9"},{text = '⑽', callback_data="/help10"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 local msg_id = msg.id_/2097152/0.5
@@ -11228,7 +11228,7 @@ local Text =[[
 *يمكنك تصفح الاضافات من خلال*
 *الكيبورد الموجود في الأسفل*
 *⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆*
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. .[𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11239,7 +11239,7 @@ keyboard.inline_keyboard = {
 {text = 'تنبيه المعرف', callback_data="/change-id"},{text = 'تنبيه الصور', callback_data="/change-photo"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 local msg_id = msg.id_/2097152/0.5
@@ -11265,7 +11265,7 @@ for k,v in pairs(zx.ok) do
 i = i + 1
 t = t..i.."-  "..v.." \n"
 end
-send(msg.chat_id_, msg.id_, t..'⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆ٴ\n꙳.︙ ꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥 ')
+send(msg.chat_id_, msg.id_, t..'⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆ٴ\n꙳.︙ ꙳. .[𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd) ')
 end
 if text == "تعطيل الابراج" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '꙳.︙ تم تعطيل الابراج')
@@ -11371,7 +11371,7 @@ if text == 'رابط الحذف' or text == 'رابط حذف' then
 t =[[
 رابط الحذف في جميع مواقع التواصل ꙳.
 فكر قبل لا تتسرع وتروح
-≪─━─━─𝙎𝙉━─━─≫
+≪─━─━─𝙆𝙮━─━─≫
  ꙳. رابط حذف  [Telegram](https://my.telegram.org/auth?to=delete) ܁
  ꙳. رابط حذف [instagram](https://www.instagram.com/accounts/login/?next=/accounts/remove/request/permanent/) ܁
  ꙳. رابط حذف [Facebook](https://www.facebook.com/help/deleteaccount) ܁
@@ -11476,7 +11476,7 @@ local Teext =[[
 ꙳.︙ الجهات
 ꙳.︙ الاشعارات
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆ٴ
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. .[𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11496,7 +11496,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -11545,7 +11545,7 @@ local Teext =[[
 ꙳.︙اوامر التحشيش
 ꙳.︙صورتي 
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆ٴ
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. .[𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11565,7 +11565,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -11596,7 +11596,7 @@ local Teext =[[
 ꙳.︙ وصف
 ꙳.︙ تكرار + عدد
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆ٴ
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. .[𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11616,7 +11616,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -11656,7 +11656,7 @@ local Teext =[[
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆
 ꙳.︙ الاوامر المضافه ( لعرض الاوامر المضافه ) 
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆ٴ
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. .[𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11676,7 +11676,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖??𝙠 ↺', callback_data="/help"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -11721,7 +11721,7 @@ local Teext =[[
 ꙳.︙ تغير امر الاوامر
 ꙳.︙ تغير امر م1 ~ الئ م10
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆ٴ
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. .[𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11741,7 +11741,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -11805,7 +11805,7 @@ local Teext =[[
 ꙳.︙الساعه
 ꙳.︙التاريخ
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆ٴ
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. .[𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11825,7 +11825,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -11879,7 +11879,7 @@ local Teext =[[
 ꙳.︙رفع + تنزيل ← الحاته
 ꙳.︙تاك للحاتات
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆ٴ
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. .[𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11899,7 +11899,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -11923,7 +11923,7 @@ local Teext =[[
 ꙳.︙اسم ~ ايدي + بوت غادر 
 ꙳.︙اذاعه 
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆ٴ
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. .[𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11943,7 +11943,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12020,7 +12020,7 @@ local Teext =[[
 ꙳.︙تنظيف المشتركين
 ꙳.︙تنظيف الكروبات
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆ٴ
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. .[𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12040,7 +12040,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12076,7 +12076,7 @@ local Teext =[[
 ꙳.︙شنو رئيك بهاي بالرد
 ꙳.︙تحب هذا
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆ٴ
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. .[𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12096,7 +12096,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12121,7 +12121,7 @@ local Teext =[[
 *⑼◂ اوامر مطور الاساسي .*
 *⑽◂ اوامر الاعضاء .*
 *⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆*
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. .[𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12138,7 +12138,7 @@ keyboard.inline_keyboard = {
 {text = '⑼', callback_data="/help9"},{text = '⑽', callback_data="/help10"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12172,7 +12172,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/add"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12205,7 +12205,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/add"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12235,7 +12235,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/add"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12265,7 +12265,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/add"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12295,7 +12295,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/add"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12316,7 +12316,7 @@ local Teext =[[
 *يمكنك تصفح الاضافات من خلال*
 *الكيبورد الموجود في الأسفل*
 *⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆*
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. .[𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12327,7 +12327,7 @@ keyboard.inline_keyboard = {
 {text = 'تنبيه المعرف', callback_data="/change-id"},{text = 'تنبيه الصور', callback_data="/change-photo"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
