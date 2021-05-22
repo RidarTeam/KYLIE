@@ -10755,8 +10755,8 @@ local modea = {
 " ꙳.︙ حلوة حبيبي معليك بالمضغوطين",
 " ꙳.︙ جهرتك منورة ",
 " ꙳.︙ هاي شكد حلو انتة",
-" ꙳.︙ اصلا صوفي احلئ",
-" ꙳.︙ اصلا روظي احلئ",
+" ꙳.︙ اصلا ࢪسـو احلئ",
+" ꙳.︙ اصلا علوش احلئ",
 " ꙳.︙ فديت الصاك محح",
 " ꙳.︙ فـدشـي عمـي",
 " ꙳.︙ دغـيرهـا شبـي هـاذ",
@@ -12397,7 +12397,7 @@ end
 if text == "نسبه الحب" or text == "نسبه حب" and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
 if not database:get(bot_id..'Cick:lov'..msg.chat_id_) then
 database:set(bot_id..":"..msg.sender_user_id_..":lov_Bots"..msg.chat_id_,"sendlove")
-Text = 'ارسل اسمك واسم الشخص الثاني،  \n مثال روظي و وروان'
+Text = 'ارسل اسمك واسم الشخص الثاني،  \n مثال ࢪسـول و وروان'
 send(msg.chat_id_, msg.id_,Text) 
 end
 end
