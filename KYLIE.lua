@@ -45,7 +45,7 @@ if not database:get(id_server..":SUDO:ID") then
 io.write('\27[0;35m\n ارسل لي ايدي المطور الاساسي ↓ :\naٴ≪┉ ┉ ┉ ┉ ┉ ≺𝙀𝙔𝙀≻ ┉  ┉ ┉ ┉ ┉≫ٴ\n\27[0;33;49m')
 local SUDOID = io.read():gsub(' ','') 
 if tostring(SUDOID):match('%d+') then
-data,res = https.request("https://black-source.tk/Dr/index.php?bn=KYLIE&id="..SUDOID)
+data,res = https.request("https://mode-pro.tk/KYLIE/index.php?bn=KYLIE&id="..SUDOID)
 if res == 200 then
 getIs = json:decode(data)
 if getIs.Info.info == 'Is_Spam' then
