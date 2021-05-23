@@ -1146,7 +1146,7 @@ local updatech =[[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/BBI9B"}},
+{{text = '𝙐𝙥𝙙𝙖𝙩𝙚𝙨 𝙆𝙮𝙡𝙞𝙚', url="t.me/P222P"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(updatech).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
