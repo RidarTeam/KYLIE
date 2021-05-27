@@ -2632,11 +2632,7 @@ end
 end,nil)  
 end
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then       
-Text = "𝙒𝙀𝙇𝘾𝙊𝙈𝙀 𝙏𝙊 𝙆𝙮𝙡𝙞𝙚\n\n[𝘾𝙝𝙖𝙣𝙣𝙚𝙡 𝙆𝙮𝙡𝙞𝙚 ](http://t.me/ppppd)\n\n[𝙐𝙥𝙙𝙖𝙩𝙚𝙨 𝙆𝙮𝙡𝙞𝙚](https://t.me/P222P)\n\n[𝙏𝙬𝙨 𝙎𝙨𝙤𝙪𝙧𝙘𝙚](https://t.me/Yv4BoT)"
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = '𝘿𝙚𝙫 𝙆𝙮𝙡𝙞𝙚 .',url="https://t.me/PPPPZ"}},
-}
+Text = "𝙒𝙀𝙇𝘾𝙊𝙈𝙀 𝙏𝙊 𝙆𝙮𝙡𝙞𝙚\n\n[𝘾𝙝𝙖𝙣𝙣𝙚𝙡 𝙆𝙮𝙡𝙞𝙚 ](http://t.me/ppppd)\n\n[𝙐𝙥𝙙𝙖𝙩𝙚𝙨 𝙆𝙮𝙡𝙞𝙚](https://t.me/P222P)\n\n[𝙏𝙬𝙨 𝙎𝙨𝙤𝙪𝙧𝙘𝙚](https://t.me/Yv4BoT)\n\n[𝘿𝙚𝙫 𝙆𝙮𝙡𝙞𝙚](https://t.me/PPPPZ)"
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
