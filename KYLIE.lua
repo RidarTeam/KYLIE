@@ -504,7 +504,7 @@ end
 function Total_Msg(msgs)  
 local KYLIE_Msg = ''  
 if msgs < 100 then 
-KYLIE_Msg = 'غير متفاعل' 
+KYLIE_Msg = 'زربا' 
 elseif msgs < 200 then 
 KYLIE_Msg = 'بده يتحسن' 
 elseif msgs < 400 then 
@@ -735,7 +735,7 @@ local function trigger_anti_spam(msg,type)
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data)
 local Name = '['..utf8.sub(data.first_name_,0,40)..'](tg://user?id='..data.id_..')'
 if type == 'kick' then 
-Text = '\n ꙳.︙العضــو » '..Name..'\n ꙳.︙قام بالتكرار هنا وتم طرده '  
+Text = '\n ꙳.︙العضو » '..Name..'\n ꙳.︙قام بالتكرار هنا وتم طرده '  
 sendText(msg.chat_id_,Text,0,'md')
 chat_kick(msg.chat_id_,msg.sender_user_id_) 
 my_ide = msg.sender_user_id_
@@ -779,12 +779,12 @@ DeleteMessage(msg.chat_id_, {[0] = data.messages_[0].id_})
 end;end;end, nil)
 msgm = msgm - 1048576
 end
-Text = '\n ꙳.︙العضــو » '..Name..'\n ꙳.︙قام بالتكرار هنا وتم تقييده '  
+Text = '\n ꙳.︙العضو » '..Name..'\n ꙳.︙قام بالتكرار هنا وتم تقييده '  
 sendText(msg.chat_id_,Text,0,'md')
 return false  
 end  
 if type == 'mute' then
-Text = '\n ꙳.︙العضــو » '..Name..'\n ꙳.︙قام بالتكرار هنا وتم كتمه '  
+Text = '\n ꙳.︙العضو » '..Name..'\n ꙳.︙قام بالتكرار هنا وتم كتمه '  
 sendText(msg.chat_id_,Text,0,'md')
 database:sadd(bot_id..'Muted:User'..msg.chat_id_,msg.sender_user_id_) 
 msgm = msg.id_
@@ -5909,8 +5909,8 @@ end
 function start_function(extra, result, success)
 database:sadd(bot_id..'Mode:User'..msg.chat_id_, result.sender_user_id_)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
-usertext = '\n ꙳.︙العضــو » ['..data.first_name_..'](t.me/'..(data.username_ or 'DEVBESSO')..')'
-local  statuss  = '\n ꙳.︙تم رفع العضــو الحاته في الكروب \n ꙳.︙تعال يحاته ممكن نتعرف'
+usertext = '\n ꙳.︙العضو » ['..data.first_name_..'](t.me/'..(data.username_ or 'DEVBESSO')..')'
+local  statuss  = '\n ꙳.︙تم رفع العضو الحاته في الكروب \n ꙳.︙تعال يحاته ممكن نتعرف'
 send(msg.chat_id_, msg.id_, usertext..statuss)
 end,nil)
 end
@@ -5931,8 +5931,8 @@ end
 function start_function(extra, result, success)
 database:srem(bot_id..'Mode:User'..msg.chat_id_, result.sender_user_id_)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
-usertext = '\n ꙳.︙العضــو » ['..data.first_name_..'](t.me/'..(data.username_ or 'ppppd')..')'
-status  = '\n ꙳.︙تم تنزيل العضــو الحاته من الكروب\n ꙳.︙مشيي مو خوش حاتهه'
+usertext = '\n ꙳.︙العضو » ['..data.first_name_..'](t.me/'..(data.username_ or 'ppppd')..')'
+status  = '\n ꙳.︙تم تنزيل العضو الحاته من الكروب\n ꙳.︙مشيي مو خوش حاتهه'
 send(msg.chat_id_, msg.id_, usertext..status)
 end,nil)
 end
@@ -5978,8 +5978,8 @@ end
 function start_function(extra, result, success)
 database:sadd(bot_id..'Modde:User'..msg.chat_id_, result.sender_user_id_)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
-usertext = '\n ꙳.︙العضــو » ['..data.first_name_..'](t.me/'..(data.username_ or 'DEVBESSO')..')'
-local  statuss  = '\n ꙳.︙تم رفع العضــو الصاك في الكروب \n ꙳.︙تعال حبي الصاك نطيني بوسه'
+usertext = '\n ꙳.︙العضو » ['..data.first_name_..'](t.me/'..(data.username_ or 'DEVBESSO')..')'
+local  statuss  = '\n ꙳.︙تم رفع العضو الصاك في الكروب \n ꙳.︙تعال حبي الصاك نطيني بوسه'
 send(msg.chat_id_, msg.id_, usertext..statuss)
 end,nil)
 end
@@ -6000,8 +6000,8 @@ end
 function start_function(extra, result, success)
 database:srem(bot_id..'Modde:User'..msg.chat_id_, result.sender_user_id_)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
-usertext = '\n ꙳.︙العضــو » ['..data.first_name_..'](t.me/'..(data.username_ or 'ppppd')..')'
-status  = '\n ꙳.︙تم تنزيل العضــو الصاك من الكروب\n ꙳.︙مشيي مو خوش صاك'
+usertext = '\n ꙳.︙العضو » ['..data.first_name_..'](t.me/'..(data.username_ or 'ppppd')..')'
+status  = '\n ꙳.︙تم تنزيل العضو الصاك من الكروب\n ꙳.︙مشيي مو خوش صاك'
 send(msg.chat_id_, msg.id_, usertext..status)
 end,nil)
 end
@@ -8169,14 +8169,14 @@ end
 if text == "تفعيل رابط" or text == 'تفعيل الرابط' then
 if Mod(msg) then  
 database:set(bot_id.."Link_Group:status"..msg.chat_id_,true) 
-send(msg.chat_id_, msg.id_,"꙳.︙تم تفعيل الرابط ✓") 
+send(msg.chat_id_, msg.id_,"꙳.︙تم تفعيل الرابط ") 
 return false  
 end
 end
 if text == "تعطيل رابط" or text == 'تعطيل الرابط' then
 if Mod(msg) then  
 database:del(bot_id.."Link_Group:status"..msg.chat_id_) 
-send(msg.chat_id_, msg.id_,"꙳.︙تم تعطيل الرابط ✘") 
+send(msg.chat_id_, msg.id_,"꙳.︙تم تعطيل الرابط ") 
 return false end
 end
 if text == 'المطور' or text == 'مطور' then
@@ -8207,7 +8207,7 @@ end
 if text == "الرابط" then 
 local status_Link = database:get(bot_id.."Link_Group:status"..msg.chat_id_)
 if not status_Link then
-send(msg.chat_id_, msg.id_,"الرابط معطل ✘") 
+send(msg.chat_id_, msg.id_,"الرابط معطل ") 
 return false  
 end
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,ta) 
@@ -10641,7 +10641,8 @@ local List = {
 ゠𝚂𝚃𝙰 𖨈 #stast 𖥲 .
 ゠𝙸𝙳 𖨈 #id 𖥲 .
 ]],
-[[꙳.︙ᴜѕᴇʀɴᴀᴍᴇ ➥• #username .
+[[
+꙳.︙ᴜѕᴇʀɴᴀᴍᴇ ➥• #username .
 ꙳.︙ᴍѕɢѕ ➥• #msgs .
 ꙳.︙ѕᴛᴀᴛѕ ➥• #stast .
 ꙳.︙ʏᴏᴜʀ ɪᴅ ➥• #id  .
@@ -10755,8 +10756,8 @@ local modea = {
 " ꙳.︙حلوة حبيبي معليك بالمضغوطين",
 " ꙳.︙جهرتك منورة ",
 " ꙳.︙هاي شكد حلو انتة",
-" ꙳.︙اصلا صوفي احلئ",
-" ꙳.︙اصلا روظي احلئ",
+" ꙳.︙اصلا ࢪسـو احلئ",
+" ꙳.︙اصلا علوش احلئ",
 " ꙳.︙فديت الصاك محح",
 " ꙳.︙فـدشـي عمـي",
 " ꙳.︙دغـيرهـا شبـي هـاذ",
@@ -11911,7 +11912,7 @@ https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callb
 return false
 end
 local Teext =[[
-🏅∫𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁𝚂' 𝙾𝚁𝙳𝙴𝚁𝚂 .
+🏅∫𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁𝚂' 𝙾??𝙳𝙴𝚁𝚂 .
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆
 ꙳.︙اوامر المطورين ( 👥).
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆
