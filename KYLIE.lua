@@ -504,7 +504,7 @@ end
 function Total_Msg(msgs)  
 local KYLIE_Msg = ''  
 if msgs < 100 then 
-KYLIE_Msg = 'زربا' 
+KYLIE_Msg = 'غير متفاعل' 
 elseif msgs < 200 then 
 KYLIE_Msg = 'بده يتحسن' 
 elseif msgs < 400 then 
@@ -11912,7 +11912,7 @@ https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callb
 return false
 end
 local Teext =[[
-🏅∫𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁𝚂' 𝙾??𝙳𝙴𝚁𝚂 .
+🏅∫𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁??' 𝙾??𝙳𝙴𝚁𝚂 .
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆
 ꙳.︙اوامر المطورين ( 👥).
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆
