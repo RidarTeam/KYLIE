@@ -504,7 +504,7 @@ end
 function Total_Msg(msgs)  
 local KYLIE_Msg = ''  
 if msgs < 100 then 
-KYLIE_Msg = 'غير متفاعل' 
+KYLIE_Msg = 'زربا'
 elseif msgs < 200 then 
 KYLIE_Msg = 'بده يتحسن' 
 elseif msgs < 400 then 
@@ -2632,7 +2632,7 @@ end
 end,nil)  
 end
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then       
-Text = "𝙒𝙀𝙇𝘾𝙊𝙈𝙀 𝙏𝙊 𝙆𝙮𝙡𝙞𝙚\n\n[𝘾𝙝𝙖𝙣𝙣𝙚𝙡 𝙆𝙮𝙡𝙞𝙚 ](http://t.me/ppppd)\n\n[𝙐𝙥𝙙𝙖𝙩𝙚𝙨 𝙆𝙮𝙡𝙞𝙚](https://t.me/P222P)\n\n[𝙏𝙬𝙨 𝙎𝙨𝙤𝙪𝙧𝙘𝙚](https://t.me/Yv4BoT)\n\n[𝘿𝙚𝙫 𝙆𝙮𝙡𝙞𝙚](https://t.me/PPPPZ)"
+Text = "𝙒𝙀𝙇𝘾𝙊𝙈𝙀 𝙏𝙊 𝙆𝙮𝙡𝙞𝙚\n\n[𝘾𝙝𝙖𝙣𝙣𝙚𝙡 𝙆𝙮𝙡𝙞𝙚 ](http://t.me/ppppd)\n\n[𝙐𝙥𝙙𝙖𝙩𝙚𝙨 𝙆𝙮𝙡𝙞𝙚](http://t.me/P222P)\n\n[𝙏𝙬𝙨 𝙎𝙨𝙤𝙪𝙧𝙘𝙚](http://t.me/Yv4BoT)"
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '𝘿𝙚𝙫 𝙆𝙮𝙡𝙞𝙚 .',url="https://t.me/PPPPZ"}},
@@ -2709,7 +2709,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,' ꙳.︙لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ꙳.︙ اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,' ꙳.︙لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n ꙳.︙اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -4006,7 +4006,7 @@ end
 function start_function(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"꙳.︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 database:sadd(bot_id..'Sudo:User', result.id_)
@@ -5533,7 +5533,7 @@ send(msg.chat_id_, msg.id_, '\n ꙳.︙عذرا لا تستطيع طرد ( '..Ru
 else
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = result.id_, status_ = { ID = "ChatMemberStatusKicked" },},function(arg,data) 
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_,"꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_,"꙳.︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 if (data and data.code_ and data.code_ == 400 and data.message_ == "CHAT_ADMIN_REQUIRED") then 
@@ -8169,14 +8169,14 @@ end
 if text == "تفعيل رابط" or text == 'تفعيل الرابط' then
 if Mod(msg) then  
 database:set(bot_id.."Link_Group:status"..msg.chat_id_,true) 
-send(msg.chat_id_, msg.id_,"꙳.︙تم تفعيل الرابط ") 
+send(msg.chat_id_, msg.id_,"꙳.︙تم تفعيل الرابط") 
 return false  
 end
 end
 if text == "تعطيل رابط" or text == 'تعطيل الرابط' then
 if Mod(msg) then  
 database:del(bot_id.."Link_Group:status"..msg.chat_id_) 
-send(msg.chat_id_, msg.id_,"꙳.︙تم تعطيل الرابط ") 
+send(msg.chat_id_, msg.id_,"꙳.︙تم تعطيل الرابط") 
 return false end
 end
 if text == 'المطور' or text == 'مطور' then
@@ -8207,7 +8207,7 @@ end
 if text == "الرابط" then 
 local status_Link = database:get(bot_id.."Link_Group:status"..msg.chat_id_)
 if not status_Link then
-send(msg.chat_id_, msg.id_,"الرابط معطل ") 
+send(msg.chat_id_, msg.id_,"الرابط معطل") 
 return false  
 end
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,ta) 
@@ -10520,7 +10520,7 @@ send(msg.chat_id_, msg.id_,' ꙳.︙لا استطيع اصيح معرف بوتا
 return false  
 end
 if result and result.type_ and result.type_.channel_ and result.type_.channel_.is_supergroup_ == true then
-send(msg.chat_id_, msg.id_,'꙳.︙ لا اسطيع صيح معرفات الكروبات') 
+send(msg.chat_id_, msg.id_,'꙳.︙لا اسطيع صيح معرفات الكروبات') 
 return false  
 end
 if result.id_ then
@@ -11170,32 +11170,32 @@ end
 local Text =[[
 𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙆𝙮𝙡𝙞𝙚 𝙄𝙣𝙛𝙤  💭
 *⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆*
-*⑴◂ اوامر الحمايه .*
-*⑵◂ اوامر تعطيل ~ تفعيل .*
-*⑶◂ اوامر ضع ~ اضف  .*
-*⑷◂ اوامر مسح ~ حذف .*
-*⑸◂ اوامر تنزيل+رفع+التغير .*
-*⑹◂ اوامر الكروب .*
-*⑺◂ اوامر التحشيش .*
-*⑻◂ اوامر مطور البوت .*
-*⑼◂ اوامر مطور الاساسي .*
-*⑽◂ اوامر الاعضاء .*
+*⋖𝟏⋗◂ اوامر الحمايه .*
+*⋖𝟐⋗◂ اوامر تعطيل ~ تفعيل .*
+*⋖𝟑⋗◂ اوامر ضع ~ اضف  .*
+*⋖𝟒⋗◂ اوامر مسح ~ حذف .*
+*⋖𝟓⋗◂ اوامر تنزيل+رفع+التغير .*
+*⋖𝟔⋗◂ اوامر الكروب .*
+*⋖𝟕⋗◂ اوامر التحشيش .*
+*⋖𝟖⋗◂ اوامر مطور البوت .*
+*⋖𝟗⋗◂ اوامر مطور الاساسي .*
+*⋖𝟏𝟎⋗◂ اوامر الاعضاء .*
 *⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆*
-꙳. .[𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
+꙳. [𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '⑴', callback_data="/help1"},{text = '⑵', callback_data="/help2"},{text = '⑶', callback_data="/help3"},
+{text = '⋖𝟏⋗', callback_data="/help1"},{text = '⋖𝟐⋗', callback_data="/help2"},{text = '⋖𝟑⋗', callback_data="/help3"},
 },
 {
-{text = '⑷', callback_data="/help4"},{text = '⑸', callback_data="/help5"},
+{text = '⋖𝟒⋗', callback_data="/help4"},{text = '⋖𝟓⋗', callback_data="/help5"},
 },
 {
-{text = '⑹', callback_data="/help6"},{text = '⑺', callback_data="/help7"},{text = '⑻', callback_data="/help8"},
+{text = '⋖𝟔⋗', callback_data="/help6"},{text = '⋖𝟕⋗', callback_data="/help7"},{text = '⋖𝟖⋗', callback_data="/help8"},
 },
 {
-{text = '⑼', callback_data="/help9"},{text = '⑽', callback_data="/help10"},
+{text = '⋖𝟗⋗', callback_data="/help9"},{text = '⋖𝟏𝟎⋗', callback_data="/help10"},
 },
 {
 {text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
@@ -11482,16 +11482,16 @@ local Teext =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '⑴', callback_data="/help1"},{text = '⑵', callback_data="/help2"},{text = '⑶', callback_data="/help3"},
+{text = '⋖𝟏⋗', callback_data="/help1"},{text = '⋖𝟐⋗', callback_data="/help2"},{text = '⋖𝟑⋗', callback_data="/help3"},
 },
 {
-{text = '⑷', callback_data="/help4"},{text = '⑸', callback_data="/help5"},
+{text = '⋖𝟒⋗', callback_data="/help4"},{text = '⋖𝟓⋗', callback_data="/help5"},
 },
 {
-{text = '⑹', callback_data="/help6"},{text = '⑺', callback_data="/help7"},{text = '⑻', callback_data="/help8"},
+{text = '⋖𝟔⋗', callback_data="/help6"},{text = '⋖𝟕⋗', callback_data="/help7"},{text = '⋖𝟖⋗', callback_data="/help8"},
 },
 {
-{text = '⑼', callback_data="/help9"},{text = '⑽', callback_data="/help10"},
+{text = '⋖𝟗⋗', callback_data="/help9"},{text = '⋖𝟏𝟎⋗', callback_data="/help10"},
 },
 {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
@@ -11551,16 +11551,16 @@ local Teext =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '⑴', callback_data="/help1"},{text = '⑵', callback_data="/help2"},{text = '⑶', callback_data="/help3"},
+{text = '⋖𝟏⋗', callback_data="/help1"},{text = '⋖𝟐⋗', callback_data="/help2"},{text = '⋖𝟑⋗', callback_data="/help3"},
 },
 {
-{text = '⑷', callback_data="/help4"},{text = '⑸', callback_data="/help5"},
+{text = '⋖𝟒⋗', callback_data="/help4"},{text = '⋖𝟓⋗', callback_data="/help5"},
 },
 {
-{text = '⑹', callback_data="/help6"},{text = '⑺', callback_data="/help7"},{text = '⑻', callback_data="/help8"},
+{text = '⋖𝟔⋗', callback_data="/help6"},{text = '⋖𝟕⋗', callback_data="/help7"},{text = '⋖𝟖⋗', callback_data="/help8"},
 },
 {
-{text = '⑼', callback_data="/help9"},{text = '⑽', callback_data="/help10"},
+{text = '⋖𝟗⋗', callback_data="/help9"},{text = '⋖𝟏𝟎⋗', callback_data="/help10"},
 },
 {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
@@ -11602,16 +11602,16 @@ local Teext =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '⑴', callback_data="/help1"},{text = '⑵', callback_data="/help2"},{text = '⑶', callback_data="/help3"},
+{text = '⋖𝟏⋗', callback_data="/help1"},{text = '⋖𝟐⋗', callback_data="/help2"},{text = '⋖𝟑⋗', callback_data="/help3"},
 },
 {
-{text = '⑷', callback_data="/help4"},{text = '⑸', callback_data="/help5"},
+{text = '⋖𝟒⋗', callback_data="/help4"},{text = '⋖𝟓⋗', callback_data="/help5"},
 },
 {
-{text = '⑹', callback_data="/help6"},{text = '⑺', callback_data="/help7"},{text = '⑻', callback_data="/help8"},
+{text = '⋖𝟔⋗', callback_data="/help6"},{text = '⋖𝟕⋗', callback_data="/help7"},{text = '⋖𝟖⋗', callback_data="/help8"},
 },
 {
-{text = '⑼', callback_data="/help9"},{text = '⑽', callback_data="/help10"},
+{text = '⋖𝟗⋗', callback_data="/help9"},{text = '⋖𝟏𝟎⋗', callback_data="/help10"},
 },
 {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
@@ -11662,16 +11662,16 @@ local Teext =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '⑴', callback_data="/help1"},{text = '⑵', callback_data="/help2"},{text = '⑶', callback_data="/help3"},
+{text = '⋖𝟏⋗', callback_data="/help1"},{text = '⋖𝟐⋗', callback_data="/help2"},{text = '⋖𝟑⋗', callback_data="/help3"},
 },
 {
-{text = '⑷', callback_data="/help4"},{text = '⑸', callback_data="/help5"},
+{text = '⋖𝟒⋗', callback_data="/help4"},{text = '⋖𝟓⋗', callback_data="/help5"},
 },
 {
-{text = '⑹', callback_data="/help6"},{text = '⑺', callback_data="/help7"},{text = '⑻', callback_data="/help8"},
+{text = '⋖𝟔⋗', callback_data="/help6"},{text = '⋖𝟕⋗', callback_data="/help7"},{text = '⋖𝟖⋗', callback_data="/help8"},
 },
 {
-{text = '⑼', callback_data="/help9"},{text = '⑽', callback_data="/help10"},
+{text = '⋖𝟗⋗', callback_data="/help9"},{text = '⋖𝟏𝟎⋗', callback_data="/help10"},
 },
 {
 {text = '↻ 𝘽𝙖??𝙠 ↺', callback_data="/help"},
@@ -11727,16 +11727,16 @@ local Teext =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '⑴', callback_data="/help1"},{text = '⑵', callback_data="/help2"},{text = '⑶', callback_data="/help3"},
+{text = '⋖𝟏⋗', callback_data="/help1"},{text = '⋖𝟐⋗', callback_data="/help2"},{text = '⋖𝟑⋗', callback_data="/help3"},
 },
 {
-{text = '⑷', callback_data="/help4"},{text = '⑸', callback_data="/help5"},
+{text = '⋖𝟒⋗', callback_data="/help4"},{text = '⋖𝟓⋗', callback_data="/help5"},
 },
 {
-{text = '⑹', callback_data="/help6"},{text = '⑺', callback_data="/help7"},{text = '⑻', callback_data="/help8"},
+{text = '⋖𝟔⋗', callback_data="/help6"},{text = '⋖𝟕⋗', callback_data="/help7"},{text = '⋖𝟖⋗', callback_data="/help8"},
 },
 {
-{text = '⑼', callback_data="/help9"},{text = '⑽', callback_data="/help10"},
+{text = '⋖𝟗⋗', callback_data="/help9"},{text = '⋖𝟏𝟎⋗', callback_data="/help10"},
 },
 {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
@@ -11811,16 +11811,16 @@ local Teext =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '⑴', callback_data="/help1"},{text = '⑵', callback_data="/help2"},{text = '⑶', callback_data="/help3"},
+{text = '⋖𝟏⋗', callback_data="/help1"},{text = '⋖𝟐⋗', callback_data="/help2"},{text = '⋖𝟑⋗', callback_data="/help3"},
 },
 {
-{text = '⑷', callback_data="/help4"},{text = '⑸', callback_data="/help5"},
+{text = '⋖𝟒⋗', callback_data="/help4"},{text = '⋖𝟓⋗', callback_data="/help5"},
 },
 {
-{text = '⑹', callback_data="/help6"},{text = '⑺', callback_data="/help7"},{text = '⑻', callback_data="/help8"},
+{text = '⋖𝟔⋗', callback_data="/help6"},{text = '⋖𝟕⋗', callback_data="/help7"},{text = '⋖𝟖⋗', callback_data="/help8"},
 },
 {
-{text = '⑼', callback_data="/help9"},{text = '⑽', callback_data="/help10"},
+{text = '⋖𝟗⋗', callback_data="/help9"},{text = '⋖𝟏𝟎⋗', callback_data="/help10"},
 },
 {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
@@ -11885,16 +11885,16 @@ local Teext =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '⑴', callback_data="/help1"},{text = '⑵', callback_data="/help2"},{text = '⑶', callback_data="/help3"},
+{text = '⋖𝟏⋗', callback_data="/help1"},{text = '⋖𝟐⋗', callback_data="/help2"},{text = '⋖𝟑⋗', callback_data="/help3"},
 },
 {
-{text = '⑷', callback_data="/help4"},{text = '⑸', callback_data="/help5"},
+{text = '⋖𝟒⋗', callback_data="/help4"},{text = '⋖𝟓⋗', callback_data="/help5"},
 },
 {
-{text = '⑹', callback_data="/help6"},{text = '⑺', callback_data="/help7"},{text = '⑻', callback_data="/help8"},
+{text = '⋖𝟔⋗', callback_data="/help6"},{text = '⋖𝟕⋗', callback_data="/help7"},{text = '⋖𝟖⋗', callback_data="/help8"},
 },
 {
-{text = '⑼', callback_data="/help9"},{text = '⑽', callback_data="/help10"},
+{text = '⋖𝟗⋗', callback_data="/help9"},{text = '⋖𝟏𝟎⋗', callback_data="/help10"},
 },
 {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
@@ -11912,7 +11912,7 @@ https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callb
 return false
 end
 local Teext =[[
-🏅∫𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁??' 𝙾??𝙳𝙴𝚁𝚂 .
+🏅∫𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁𝚂' 𝙾𝚁𝙳𝙴𝚁𝚂 .
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆
 ꙳.︙اوامر المطورين ( 👥).
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆
@@ -11929,16 +11929,16 @@ local Teext =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '⑴', callback_data="/help1"},{text = '⑵', callback_data="/help2"},{text = '⑶', callback_data="/help3"},
+{text = '⋖𝟏⋗', callback_data="/help1"},{text = '⋖𝟐⋗', callback_data="/help2"},{text = '⋖𝟑⋗', callback_data="/help3"},
 },
 {
-{text = '⑷', callback_data="/help4"},{text = '⑸', callback_data="/help5"},
+{text = '⋖𝟒⋗', callback_data="/help4"},{text = '⋖𝟓⋗', callback_data="/help5"},
 },
 {
-{text = '⑹', callback_data="/help6"},{text = '⑺', callback_data="/help7"},{text = '⑻', callback_data="/help8"},
+{text = '⋖𝟔⋗', callback_data="/help6"},{text = '⋖𝟕⋗', callback_data="/help7"},{text = '⋖𝟖⋗', callback_data="/help8"},
 },
 {
-{text = '⑼', callback_data="/help9"},{text = '⑽', callback_data="/help10"},
+{text = '⋖𝟗⋗', callback_data="/help9"},{text = '⋖𝟏𝟎⋗', callback_data="/help10"},
 },
 {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
@@ -12026,16 +12026,16 @@ local Teext =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '⑴', callback_data="/help1"},{text = '⑵', callback_data="/help2"},{text = '⑶', callback_data="/help3"},
+{text = '⋖𝟏⋗', callback_data="/help1"},{text = '⋖𝟐⋗', callback_data="/help2"},{text = '⋖𝟑⋗', callback_data="/help3"},
 },
 {
-{text = '⑷', callback_data="/help4"},{text = '⑸', callback_data="/help5"},
+{text = '⋖𝟒⋗', callback_data="/help4"},{text = '⋖𝟓⋗', callback_data="/help5"},
 },
 {
-{text = '⑹', callback_data="/help6"},{text = '⑺', callback_data="/help7"},{text = '⑻', callback_data="/help8"},
+{text = '⋖𝟔⋗', callback_data="/help6"},{text = '⋖𝟕⋗', callback_data="/help7"},{text = '⋖𝟖⋗', callback_data="/help8"},
 },
 {
-{text = '⑼', callback_data="/help9"},{text = '⑽', callback_data="/help10"},
+{text = '⋖𝟗⋗', callback_data="/help9"},{text = '⋖𝟏𝟎⋗', callback_data="/help10"},
 },
 {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
@@ -12082,16 +12082,16 @@ local Teext =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '⑴', callback_data="/help1"},{text = '⑵', callback_data="/help2"},{text = '⑶', callback_data="/help3"},
+{text = '⋖𝟏⋗', callback_data="/help1"},{text = '⋖𝟐⋗', callback_data="/help2"},{text = '⋖𝟑⋗', callback_data="/help3"},
 },
 {
-{text = '⑷', callback_data="/help4"},{text = '⑸', callback_data="/help5"},
+{text = '⋖𝟒⋗', callback_data="/help4"},{text = '⋖𝟓⋗', callback_data="/help5"},
 },
 {
-{text = '⑹', callback_data="/help6"},{text = '⑺', callback_data="/help7"},{text = '⑻', callback_data="/help8"},
+{text = '⋖𝟔⋗', callback_data="/help6"},{text = '⋖𝟕⋗', callback_data="/help7"},{text = '⋖𝟖⋗', callback_data="/help8"},
 },
 {
-{text = '⑼', callback_data="/help9"},{text = '⑽', callback_data="/help10"},
+{text = '⋖𝟗⋗', callback_data="/help9"},{text = '⋖𝟏𝟎⋗', callback_data="/help10"},
 },
 {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
@@ -12111,32 +12111,32 @@ end
 local Teext =[[
 𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙆𝙮𝙡𝙞𝙚 𝙄𝙣𝙛𝙤  💭
 *⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆*
-*⑴◂ اوامر الحمايه .*
-*⑵◂ اوامر تعطيل ~ تفعيل .*
-*⑶◂ اوامر ضع ~ اضف  .*
-*⑷◂ اوامر مسح ~ حذف .*
-*⑸◂ اوامر تنزيل+رفع+التغير .*
-*⑹◂ اوامر الكروب .*
-*⑺◂ اوامر التحشيش .*
-*⑻◂ اوامر مطور البوت .*
-*⑼◂ اوامر مطور الاساسي .*
-*⑽◂ اوامر الاعضاء .*
+*⋖𝟏⋗◂ اوامر الحمايه .*
+*⋖𝟐⋗◂ اوامر تعطيل ~ تفعيل .*
+*⋖𝟑⋗◂ اوامر ضع ~ اضف  .*
+*⋖𝟒⋗◂ اوامر مسح ~ حذف .*
+*⋖𝟓⋗◂ اوامر تنزيل+رفع+التغير .*
+*⋖𝟔⋗◂ اوامر الكروب .*
+*⋖𝟕⋗◂ اوامر التحشيش .*
+*⋖𝟖⋗◂ اوامر مطور البوت .*
+*⋖𝟗⋗◂ اوامر مطور الاساسي .*
+*⋖𝟏𝟎⋗◂ اوامر الاعضاء .*
 *⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆*
-꙳. .[𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
+꙳. [𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '⑴', callback_data="/help1"},{text = '⑵', callback_data="/help2"},{text = '⑶', callback_data="/help3"},
+{text = '⋖𝟏⋗', callback_data="/help1"},{text = '⋖𝟐⋗', callback_data="/help2"},{text = '⋖𝟑⋗', callback_data="/help3"},
 },
 {
-{text = '⑷', callback_data="/help4"},{text = '⑸', callback_data="/help5"},
+{text = '⋖𝟒⋗', callback_data="/help4"},{text = '⋖𝟓⋗', callback_data="/help5"},
 },
 {
-{text = '⑹', callback_data="/help6"},{text = '⑺', callback_data="/help7"},{text = '⑻', callback_data="/help8"},
+{text = '⋖𝟔⋗', callback_data="/help6"},{text = '⋖𝟕⋗', callback_data="/help7"},{text = '⋖𝟖⋗', callback_data="/help8"},
 },
 {
-{text = '⑼', callback_data="/help9"},{text = '⑽', callback_data="/help10"},
+{text = '⋖𝟗⋗', callback_data="/help9"},{text = '⋖𝟏𝟎⋗', callback_data="/help10"},
 },
 {
 {text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
@@ -12317,7 +12317,7 @@ local Teext =[[
 *يمكنك تصفح الاضافات من خلال*
 *الكيبورد الموجود في الأسفل*
 *⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆*
-꙳. .[𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
+꙳. [𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12398,7 +12398,7 @@ end
 if text == "نسبه الحب" or text == "نسبه حب" and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
 if not database:get(bot_id..'Cick:lov'..msg.chat_id_) then
 database:set(bot_id..":"..msg.sender_user_id_..":lov_Bots"..msg.chat_id_,"sendlove")
-Text = 'ارسل اسمك واسم الشخص الثاني،  \n مثال روظي و وروان'
+Text = 'ارسل اسمك واسم الشخص الثاني،  \n مثال علوش و وروان'
 send(msg.chat_id_, msg.id_,Text) 
 end
 end
