@@ -497,7 +497,7 @@ send(msg.chat_id_, msg.id_,NameUserr.."\n"..text)
 return false
 end
 else
-send(msg.chat_id_, msg.id_,"*꙳.︙الحساب محذوف يرجى استخدام الامر بصوره صحيحه*")
+send(msg.chat_id_, msg.id_,"꙳.︙الحساب محذوف يرجى استخدام الامر بصوره صحيحه")
 end
 end,nil)   
 end 
@@ -735,7 +735,7 @@ local function trigger_anti_spam(msg,type)
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data)
 local Name = '['..utf8.sub(data.first_name_,0,40)..'](tg://user?id='..data.id_..')'
 if type == 'kick' then 
-Text = '\n *꙳.︙العضو » *'..Name..'\n *꙳.︙قام بالتكرار هنا وتم طرده *'  
+Text = '\n ꙳.︙العضو » '..Name..'\n ꙳.︙قام بالتكرار هنا وتم طرده '  
 sendText(msg.chat_id_,Text,0,'md')
 chat_kick(msg.chat_id_,msg.sender_user_id_) 
 my_ide = msg.sender_user_id_
@@ -779,12 +779,12 @@ DeleteMessage(msg.chat_id_, {[0] = data.messages_[0].id_})
 end;end;end, nil)
 msgm = msgm - 1048576
 end
-Text = '\n *꙳.︙العضو » *'..Name..'\n *꙳.︙قام بالتكرار هنا وتم تقييده *'  
+Text = '\n ꙳.︙العضو » '..Name..'\n ꙳.︙قام بالتكرار هنا وتم تقييده '  
 sendText(msg.chat_id_,Text,0,'md')
 return false  
 end  
 if type == 'mute' then
-Text = '\n *꙳.︙العضو » *'..Name..'\n *꙳.︙قام بالتكرار هنا وتم كتمه *'  
+Text = '\n ꙳.︙العضو » '..Name..'\n ꙳.︙قام بالتكرار هنا وتم كتمه '  
 sendText(msg.chat_id_,Text,0,'md')
 database:sadd(bot_id..'Muted:User'..msg.chat_id_,msg.sender_user_id_) 
 msgm = msg.id_
@@ -1327,11 +1327,11 @@ send(msg.chat_id_,msg.id_," ꙳.︙عذرا عزيزي المستخدم هاذا
 return false 
 end      
 database:sadd(bot_id..'Sudo:User', result.id_)
-usertext = '\n *꙳.︙العضو » *['..result.title_..'](t.me/'..(username or 'ppppd')..')'
-status  = '\n *꙳.︙تم ترقيته مطور*'
+usertext = '\n ꙳.︙العضو » ['..result.title_..'](t.me/'..(username or 'ppppd')..')'
+status  = '\n ꙳.︙تم ترقيته مطور'
 texts = usertext..status
 else
-texts = '* ꙳.︙لا يوجد حساب بهاذا المعرف*'
+texts = ' ꙳.︙لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -1380,7 +1380,7 @@ usertext = '\n ꙳.︙العضو » ['..result.title_..'](t.me/'..(username or '
 status  = '\n ꙳.︙تم تنزيله من المطورين'
 texts = usertext..status
 else
-texts = '* ꙳.︙لا يوجد حساب بهاذا المعرف*'
+texts = ' ꙳.︙لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -2194,9 +2194,9 @@ end
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,chat)  
 if database:sismember(bot_id..'Chek:Groups',msg.chat_id_) then
-send(msg.chat_id_, msg.id_,'* ꙳.︙بالتأكيد تم تفعيل الكروب*')
+send(msg.chat_id_, msg.id_,' ꙳.︙بالتأكيد تم تفعيل الكروب')
 else
-sendText(msg.chat_id_,'\n *꙳.︙بواسطه »* ['..string.sub(result.first_name_,0, 70)..'](tg://user?id='..result.id_..')\n *꙳.︙تم تفعيل الكروب* {'..chat.title_..'}',msg.id_/2097152/0.5,'md')
+sendText(msg.chat_id_,'\n ꙳.︙بواسطه » ['..string.sub(result.first_name_,0, 70)..'](tg://user?id='..result.id_..')\n ꙳.︙تم تفعيل الكروب {'..chat.title_..'}',msg.id_/2097152/0.5,'md')
 database:sadd(bot_id..'Chek:Groups',msg.chat_id_)
 local Name = '['..result.first_name_..'](tg://user?id='..result.id_..')'
 local NameChat = chat.title_
@@ -3613,7 +3613,7 @@ status  = '\n ꙳.︙تم حظره عام من الكروبات'
 texts = usertext..status
 database:sadd(bot_id..'GBan:User', result.id_)
 else
-texts = '* ꙳.︙لا يوجد حساب بهاذا المعرف*'
+texts = ' ꙳.︙لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -3712,7 +3712,7 @@ status  = '\n ꙳.︙تم كتمه عام من الكروبات'
 texts = usertext..status
 database:sadd(bot_id..'Gmute:User', result.id_)
 else
-texts = '* ꙳.︙لا يوجد حساب بهاذا المعرف*'
+texts = ' ꙳.︙لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -3793,7 +3793,7 @@ texts = usertext..status
 database:srem(bot_id..'GBan:User', result.id_)
 database:srem(bot_id..'Gmute:User', result.id_)
 else
-texts = '* ꙳.︙لا يوجد حساب بهاذا المعرف*'
+texts = ' ꙳.︙لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -4014,7 +4014,7 @@ usertext = '\n ꙳.︙العضو » ['..result.title_..'](t.me/'..(username or '
 status  = '\n ꙳.︙تم ترقيته مطور'
 texts = usertext..status
 else
-texts = '* ꙳.︙لا يوجد حساب بهاذا المعرف*'
+texts = ' ꙳.︙لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -4084,7 +4084,7 @@ usertext = '\n ꙳.︙العضو » ['..result.title_..'](t.me/'..(username or '
 status  = '\n ꙳.︙تم تنزيله من المطورين'
 texts = usertext..status
 else
-texts = '* ꙳.︙لا يوجد حساب بهاذا المعرف*'
+texts = ' ꙳.︙لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -4198,7 +4198,7 @@ usertext = '\n ꙳.︙العضو » ['..result.title_..'](t.me/'..(username or '
 status  = '\n ꙳.︙تم ترقيته مالك'
 texts = usertext..status
 else
-texts = '* ꙳.︙لا يوجد حساب بهاذا المعرف*'
+texts = ' ꙳.︙لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -4268,7 +4268,7 @@ usertext = '\n ꙳.︙العضو » ['..result.title_..'](t.me/'..(username or '
 status  = '\n ꙳.︙تم تنزيله من المالكين'
 texts = usertext..status
 else
-texts = '* ꙳.︙لا يوجد حساب بهاذا المعرف*'
+texts = ' ꙳.︙لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -4491,7 +4491,7 @@ usertext = '\n ꙳.︙العضو » ['..result.title_..'](t.me/'..(username or '
 status  = '\n ꙳.︙تم ترقيته منشئ اساسي'
 texts = usertext..status
 else
-texts = '* ꙳.︙لا يوجد حساب بهاذا المعرف*'
+texts = ' ꙳.︙لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -4561,7 +4561,7 @@ usertext = '\n ꙳.︙العضو » ['..result.title_..'](t.me/'..(username or '
 status  = '\n ꙳.︙تم تنزيله من الاساسيين'
 texts = usertext..status
 else
-texts = '* ꙳.︙لا يوجد حساب بهاذا المعرف*'
+texts = ' ꙳.︙لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -4691,7 +4691,7 @@ usertext = '\n ꙳.︙العضو » ['..result.title_..'](t.me/'..(username or '
 status  = '\n ꙳.︙تم ترقيته منشئ'
 texts = usertext..status
 else
-texts = '* ꙳.︙لا يوجد حساب بهاذا المعرف*'
+texts = ' ꙳.︙لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -4760,7 +4760,7 @@ usertext = '\n ꙳.︙العضو » ['..result.title_..'](t.me/'..(username or '
 status  = '\n ꙳.︙تم تنزيله من المنشئين'
 texts = usertext..status
 else
-texts = '* ꙳.︙لا يوجد حساب بهاذا المعرف*'
+texts = ' ꙳.︙لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -4871,7 +4871,7 @@ usertext = '\n ꙳.︙العضو » ['..result.title_..'](t.me/'..(username or '
 status  = '\n ꙳.︙تم ترقيته مدير'
 texts = usertext..status
 else
-texts = '* ꙳.︙لا يوجد حساب بهاذا المعرف*'
+texts = ' ꙳.︙لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -4942,7 +4942,7 @@ usertext = '\n ꙳.︙العضو » ['..result.title_..'](t.me/'..(username or '
 status  = '\n ꙳.︙تم تنزيله من المدراء'
 texts = usertext..status
 else
-texts = '* ꙳.︙لا يوجد حساب بهاذا المعرف*'
+texts = ' ꙳.︙لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -5166,7 +5166,7 @@ usertext = '\n ꙳.︙العضو » ['..result.title_..'](t.me/'..(username or '
 status  = '\n ꙳.︙تم ترقيته ادمن'
 texts = usertext..status
 else
-texts = '* ꙳.︙لا يوجد حساب بهاذا المعرف*'
+texts = ' ꙳.︙لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -5240,7 +5240,7 @@ usertext = '\n ꙳.︙العضو » ['..result.title_..'](t.me/'..(username or '
 status  = '\n ꙳.︙تم تنزيله من الادمنيه'
 texts = usertext..status
 else
-texts = '* ꙳.︙لا يوجد حساب بهاذا المعرف*'
+texts = ' ꙳.︙لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -5358,7 +5358,7 @@ usertext = '\n ꙳.︙العضو » ['..result.title_..'](t.me/'..(username or '
 status  = '\n ꙳.︙تم ترقيته منظف'
 texts = usertext..status
 else
-texts = '* ꙳.︙لا يوجد حساب بهاذا المعرف*'
+texts = ' ꙳.︙لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -5432,7 +5432,7 @@ usertext = '\n ꙳.︙العضو » ['..result.title_..'](t.me/'..(username or '
 status  = '\n ꙳.︙تم تنزيله من المنظفين'
 texts = usertext..status
 else
-texts = '* ꙳.︙لا يوجد حساب بهاذا المعرف*'
+texts = ' ꙳.︙لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -5654,14 +5654,14 @@ end
 return false
 end
 if database:get(bot_id..'Lock:Add:Bot'..msg.chat_id_) and not Constructor(msg) then
-send(msg.chat_id_, msg.id_,' ꙳.︙تم تعطيل الرفع') 
+send(msg.chat_id_, msg.id_,'* ꙳.︙تم تعطيل الرفع*') 
 return false
 end
 function start_function(extra, result, success)
 database:sadd(bot_id..'Special:User'..msg.chat_id_, result.sender_user_id_)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
-usertext = '\n ꙳.︙العضو » ['..data.first_name_..'](t.me/'..(data.username_ or 'ppppd')..')'
-local  statuss  = '\n ꙳.︙تم ترقيته مميز'
+usertext = '*\n ꙳.︙العضو » ['..data.first_name_..'](t.me/'..(data.username_ or 'ppppd')..')*'
+local  statuss  = '*\n ꙳.︙تم ترقيته مميز*'
 send(msg.chat_id_, msg.id_, usertext..statuss)
 end,nil)
 end
@@ -5694,7 +5694,7 @@ usertext = '\n ꙳.︙العضو » ['..result.title_..'](t.me/'..(username or '
 local  statuss  = '\n ꙳.︙تم ترقيته مميز'
 texts = usertext..statuss
 else
-texts = '* ꙳.︙لا يوجد حساب بهاذا المعرف*'
+texts = ' ꙳.︙لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -5770,7 +5770,7 @@ usertext = '\n ꙳.︙العضو » ['..result.title_..'](t.me/'..(username or '
 status  = '\n ꙳.︙تم تنزيله من المميزين'
 texts = usertext..status
 else
-texts = '* ꙳.︙لا يوجد حساب بهاذا المعرف*'
+texts = ' ꙳.︙لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -6833,7 +6833,7 @@ usertext = '\n ꙳.︙العضو » ['..result.title_..'](t.me/'..(username or '
 status  = '\n ꙳.︙تم الغاء حظره'
 texts = usertext..status
 else
-texts = '* ꙳.︙لا يوجد حساب بهاذا المعرف*'
+texts = ' ꙳.︙لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -7112,7 +7112,7 @@ usertext = '\n ꙳.︙العضو » ['..result.title_..'](t.me/'..(username or '
 status  = '\n ꙳.︙تم الغاء كتمه'
 texts = usertext..status
 else
-texts = '* ꙳.︙لا يوجد حساب بهاذا المعرف*'
+texts = ' ꙳.︙لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -7206,7 +7206,7 @@ usertext = '\n ꙳.︙العضو » ['..result.title_..'](t.me/'..(username or '
 status  = '\n ꙳.︙تم تقيده'
 texts = usertext..status
 else
-texts = '* ꙳.︙لا يوجد حساب بهاذا المعرف*'
+texts = ' ꙳.︙لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -7359,7 +7359,7 @@ usertext = '\n ꙳.︙العضو » ['..result.title_..'](t.me/'..(username or '
 status  = '\n ꙳.︙تم الغاء تقيد'
 texts = usertext..status
 else
-texts = '* ꙳.︙لا يوجد حساب بهاذا المعرف*'
+texts = ' ꙳.︙لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -11355,7 +11355,7 @@ end
 end
 if text == "مصه" or text == "بوسه" or text == "بوسي" or text == "مصي" then
 if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {"مووووووووواححح💋","مابوس ولي😌😹","خدك/ج نضيف 😂","البوسه بالف حمبي 🌝💋","خلي يزحفلي وابوسه 🙊😻","كل شويه ابوسه كافي ??","ماابوسه والله هذا زاحف🦎","محح هاي لحاته صاكه💋"}send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+local texting = {"مووووووووواححح💋","مابوس ولي😌😹","خدك/ج نضيف 😂","البوسه بالف حمبي 🌝💋","خلي يزحفلي وابوسه 🙊😻","كل شويه ابوسه كافي 😏","ماابوسه والله هذا زاحف🦎","محح هاي لحاته صاكه💋"}send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
 end
 end
 if text == 'تفعيل الردود' and Manager(msg) then   
@@ -11912,7 +11912,7 @@ https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callb
 return false
 end
 local Teext =[[
-🏅∫𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁𝚂' 𝙾𝚁𝙳𝙴𝚁?? .
+🏅∫𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁𝚂' 𝙾𝚁??𝙴𝚁?? .
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆
 ꙳.︙اوامر المطورين ( 👥).
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆
