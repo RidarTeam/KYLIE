@@ -298,7 +298,7 @@ return var
 end 
 function Rutba(user_id,chat_id)
 if tonumber(user_id) == tonumber(1214622341) then  
-var = 'مطــور السـورس'
+var = 'مطور السورس'
 elseif tonumber(user_id) == tonumber(SUDO) then
 var = 'المطور الاساسي'  
 elseif database:sismember(bot_id.."Dev:mode:2", user_id) then 
@@ -668,7 +668,7 @@ end
 function Addmp3(msg,chat,kkl,ffrr)
 local eer = json:decode(https.request('https://api.telegram.org/bot'.. token..'/getfile?file_id='..kkl)) 
 download_to_file('https://api.telegram.org/file/bot'..token..'/'..eer.result.file_path,ffrr) 
-sendAudio(msg.chat_id_,msg.id_,'./'..ffrr,"𝙆𝙮𝙡𝙞𝙚 💥")  
+sendAudio(msg.chat_id_,msg.id_,'./'..ffrr,"𝙆𝙮𝙡𝙞𝙚 ")  
 os.execute('rm -rf ./'..ffrr) 
 end
 function Addsticker(msg,chat,Sd,rre)
@@ -1136,7 +1136,7 @@ local updatech =[[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/BBI9B"}},
+{{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/P222P"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(updatech).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -1313,7 +1313,7 @@ end
 function start_function(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")
+send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه")
 return false 
 end      
 database:sadd(bot_id..'Sudo:User', result.id_)
@@ -2173,7 +2173,7 @@ end
 return false
 end
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,' ꙳.︙ عذرا يرجى ترقيه البوت مشرف !')
+send(msg.chat_id_, msg.id_,'꙳.︙ عذرا يرجى ترقيه البوت مشرف')
 return false  
 end
 tdcli_function ({ ID = "GetChannelFull", channel_id_ = getChatId(msg.chat_id_).ID }, function(arg,data)  
@@ -2262,7 +2262,7 @@ end
 return false
 end
 if msg.can_be_deleted_ == false then 
-send(msg.chat_id_, msg.id_,' ꙳.︙ عذرا يرجى ترقيه البوت مشرف !')
+send(msg.chat_id_, msg.id_,'꙳.︙ عذرا يرجى ترقيه البوت مشرف')
 return false  
 end
 tdcli_function ({ ID = "GetChannelFull", channel_id_ = getChatId(msg.chat_id_).ID }, function(arg,data)  
@@ -2434,7 +2434,7 @@ for k,v in pairs(All_name) do
 t = t..""..k.."- (["..v.."])\n"
 end
 if #All_name == 0 then
-t = "꙳.︙ لا يوجد اسماء مكتومه"
+t = "*꙳.︙ لا يوجد اسماء مكتومه*"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -2622,7 +2622,7 @@ end
 end,nil)  
 end
 if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then       
-Text = "𝙒𝙀𝙇𝘾𝙊𝙈𝙀 𝙏𝙊 𝙆𝙮𝙡𝙞𝙚\n\n[𝘾𝙝𝙖𝙣𝙣𝙚𝙡 𝙆𝙮𝙡𝙞𝙚 💥](http://t.me/ppppd)"
+Text = "𝙒𝙀𝙇𝘾𝙊𝙈𝙀 𝙏𝙊 𝙆𝙮𝙡𝙞𝙚\n\n[𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚 ](http://t.me/PPPPZ)\n\n[𝙐𝙥𝙙𝙖𝙩𝙚𝙨 𝙆𝙮𝙡𝙞𝙚 ](http://t.me/P222P)\n\n[𝙏𝙬𝙎 𝙎𝙤𝙪𝙧𝙘𝙚 ](http://t.me/Yv4BoT)"
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '𝘿𝙚𝙫 𝙆𝙮𝙡𝙞𝙚 .',url="https://t.me/PPPPZ"}},
@@ -2699,7 +2699,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,' ꙳.︙ لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n 📌| اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,' ꙳.︙ لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n  ꙳.︙ اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -3587,7 +3587,7 @@ end
 function start_function(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه")   
 return false 
 end      
 if tonumber(result.id_) == tonumber(bot_id) then  
@@ -3686,7 +3686,7 @@ end
 function start_function(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه")   
 return false 
 end      
 if tonumber(result.id_) == tonumber(bot_id) then  
@@ -4180,7 +4180,7 @@ end
 function start_function(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه")   
 return false 
 end      
 database:sadd(bot_id..'CoSu'..msg.chat_id_, result.id_)
@@ -4473,7 +4473,7 @@ end
 function start_function(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه")   
 return false 
 end      
 database:sadd(bot_id..'Basic:Constructor'..msg.chat_id_, result.id_)
@@ -4673,7 +4673,7 @@ end
 function start_function(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه")   
 return false 
 end      
 database:sadd(bot_id..'Constructor'..msg.chat_id_, result.id_)
@@ -4853,7 +4853,7 @@ end
 function start_function(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه")   
 return false 
 end      
 database:sadd(bot_id..'Manager'..msg.chat_id_, result.id_)
@@ -5148,7 +5148,7 @@ end
 function start_function(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه")   
 return false 
 end      
 database:sadd(bot_id..'Mod:User'..msg.chat_id_, result.id_)
@@ -5340,7 +5340,7 @@ end
 function start_function(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه")   
 return false 
 end      
 database:sadd(bot_id..'MODE7:MN:TF'..msg.chat_id_, result.id_)
@@ -5676,7 +5676,7 @@ end
 function start_function(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه")   
 return false 
 end      
 database:sadd(bot_id..'Special:User'..msg.chat_id_, result.id_)
@@ -6699,7 +6699,7 @@ send(msg.chat_id_, msg.id_, '\n ꙳.︙ عذرا لا تستطيع حظر ( '..R
 else
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = result.id_, status_ = { ID = "ChatMemberStatusKicked" },},function(arg,data) 
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه")   
 return false 
 end      
 if (data and data.code_ and data.code_ == 400 and data.message_ == "CHAT_ADMIN_REQUIRED") then 
@@ -6940,7 +6940,7 @@ if Can_or_NotCan(result.id_, msg.chat_id_) == true then
 send(msg.chat_id_, msg.id_, '\n ꙳.︙ عذرا لا تستطيع كتم ( '..Rutba(result.id_,msg.chat_id_)..' )')
 else
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه")   
 return false 
 end      
 database:sadd(bot_id..'Muted:User'..msg.chat_id_, result.id_)
@@ -6995,7 +6995,7 @@ local TextEnd = {string.match(text, "^(كتم) (%d+) (.*) @(.*)$")}
 function start_function(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه")   
 return false 
 end      
 if TextEnd[3] == 'يوم' then
@@ -7183,7 +7183,7 @@ send(msg.chat_id_, msg.id_, " ꙳.︙ لا تسطيع تقيد البوت ")
 return false 
 end
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه")   
 return false 
 end      
 if Can_or_NotCan(result.id_, msg.chat_id_) then
@@ -7243,7 +7243,7 @@ local TextEnd = {string.match(text, "^(تقيد) (%d+) (.*) @(.*)$")}
 function start_function(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_," ꙳.︙ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه")   
 return false 
 end      
 if TextEnd[3] == 'يوم' then
@@ -8045,7 +8045,7 @@ local text =
 ' }\n'..' ꙳.︙  الايدي » { '..idgp..
 ' }\n'..' ꙳.︙  الايدي بالصوره » { '..idph..
 ' }\n'..' ꙳.︙  الرفع » { '..setadd..
-' }\n'..' ꙳.︙  الحظر » { '..banm..' }\n\n⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆\n ꙳.︙ قناة سورس كايلي ↓\n [━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd) \n'
+' }\n'..' ꙳.︙  الحظر » { '..banm..' }\n\n⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆\n ꙳.︙ قناة سورس كايلي ↓\n [𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd) \n'
 send(msg.chat_id_, msg.id_,text)     
 end
 if text ==('تثبيت') and msg.reply_to_message_id_ ~= 0 and Mod(msg) then  
@@ -9862,7 +9862,7 @@ if audios.Info == true then
 local Text ='꙳.︙تم اختيار المقطع الصوتي لك'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '━𝙆𝙮𝙡𝙞𝙚━',url="t.me/ppppd"}},
+{{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚',url="t.me/ppppd"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -10745,8 +10745,8 @@ local modea = {
 " ꙳.︙ حلوة حبيبي معليك بالمضغوطين",
 " ꙳.︙ جهرتك منورة ",
 " ꙳.︙ هاي شكد حلو انتة",
-" ꙳.︙ اصلا صوفي احلئ",
-" ꙳.︙ اصلا روظي احلئ",
+" ꙳.︙ اصلا ࢪسـو احلئ",
+" ꙳.︙ اصلا علوش احلئ",
 " ꙳.︙ فديت الصاك محح",
 " ꙳.︙ فـدشـي عمـي",
 " ꙳.︙ دغـيرهـا شبـي هـاذ",
@@ -11170,7 +11170,7 @@ local Text =[[
 *⑼◂ اوامر مطور الاساسي .*
 *⑽◂ اوامر الاعضاء .*
 *⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆*
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. [𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11187,7 +11187,7 @@ keyboard.inline_keyboard = {
 {text = '⑼', callback_data="/help9"},{text = '⑽', callback_data="/help10"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 local msg_id = msg.id_/2097152/0.5
@@ -11218,7 +11218,7 @@ local Text =[[
 *يمكنك تصفح الاضافات من خلال*
 *الكيبورد الموجود في الأسفل*
 *⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆*
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. [𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11229,7 +11229,7 @@ keyboard.inline_keyboard = {
 {text = 'تنبيه المعرف', callback_data="/change-id"},{text = 'تنبيه الصور', callback_data="/change-photo"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 local msg_id = msg.id_/2097152/0.5
@@ -11255,7 +11255,7 @@ for k,v in pairs(zx.ok) do
 i = i + 1
 t = t..i.."-  "..v.." \n"
 end
-send(msg.chat_id_, msg.id_, t..'⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆ٴ\n꙳.︙ ꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥 ')
+send(msg.chat_id_, msg.id_, t..'⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆ٴ\n꙳.︙ ꙳. [𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd) ')
 end
 if text == "تعطيل الابراج" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '꙳.︙ تم تعطيل الابراج')
@@ -11466,7 +11466,7 @@ local Teext =[[
 ꙳.︙ الجهات
 ꙳.︙ الاشعارات
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆ٴ
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. [𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11486,7 +11486,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -11535,7 +11535,7 @@ local Teext =[[
 ꙳.︙اوامر التحشيش
 ꙳.︙صورتي 
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆ٴ
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. [𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11555,7 +11555,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -11586,7 +11586,7 @@ local Teext =[[
 ꙳.︙ وصف
 ꙳.︙ تكرار + عدد
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆ٴ
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. [𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11606,7 +11606,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -11646,7 +11646,7 @@ local Teext =[[
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆
 ꙳.︙ الاوامر المضافه ( لعرض الاوامر المضافه ) 
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆ٴ
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. [𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11666,7 +11666,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖??𝙠 ↺', callback_data="/help"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -11711,7 +11711,7 @@ local Teext =[[
 ꙳.︙ تغير امر الاوامر
 ꙳.︙ تغير امر م1 ~ الئ م10
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆ٴ
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. [𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11731,7 +11731,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -11795,7 +11795,7 @@ local Teext =[[
 ꙳.︙الساعه
 ꙳.︙التاريخ
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆ٴ
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. [𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11815,7 +11815,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -11869,7 +11869,7 @@ local Teext =[[
 ꙳.︙رفع + تنزيل ← الحاته
 ꙳.︙تاك للحاتات
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆ٴ
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. [𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11889,7 +11889,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -11913,7 +11913,7 @@ local Teext =[[
 ꙳.︙اسم ~ ايدي + بوت غادر 
 ꙳.︙اذاعه 
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆ٴ
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. [𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11933,7 +11933,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12010,7 +12010,7 @@ local Teext =[[
 ꙳.︙تنظيف المشتركين
 ꙳.︙تنظيف الكروبات
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆ٴ
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. [𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12030,7 +12030,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12066,7 +12066,7 @@ local Teext =[[
 ꙳.︙شنو رئيك بهاي بالرد
 ꙳.︙تحب هذا
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆ٴ
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. [𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12086,7 +12086,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12111,7 +12111,7 @@ local Teext =[[
 *⑼◂ اوامر مطور الاساسي .*
 *⑽◂ اوامر الاعضاء .*
 *⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆*
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. [𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12128,7 +12128,7 @@ keyboard.inline_keyboard = {
 {text = '⑼', callback_data="/help9"},{text = '⑽', callback_data="/help10"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12162,7 +12162,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/add"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12195,7 +12195,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/add"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12225,7 +12225,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/add"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12255,7 +12255,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/add"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12285,7 +12285,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/add"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12306,7 +12306,7 @@ local Teext =[[
 *يمكنك تصفح الاضافات من خلال*
 *الكيبورد الموجود في الأسفل*
 *⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆*
-꙳. .[━𝙆𝙮𝙡𝙞𝙚━](t.me/ppppd)💥
+꙳. [𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12317,7 +12317,7 @@ keyboard.inline_keyboard = {
 {text = 'تنبيه المعرف', callback_data="/change-id"},{text = 'تنبيه الصور', callback_data="/change-photo"},
 },
 {
-{text = '━𝙆𝙮𝙡𝙞𝙚━', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12387,7 +12387,7 @@ end
 if text == "نسبه الحب" or text == "نسبه حب" and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
 if not database:get(bot_id..'Cick:lov'..msg.chat_id_) then
 database:set(bot_id..":"..msg.sender_user_id_..":lov_Bots"..msg.chat_id_,"sendlove")
-Text = 'ارسل اسمك واسم الشخص الثاني،  \n مثال روظي و وروان'
+Text = 'ارسل اسمك واسم الشخص الثاني،  \n مثال علوش و وروان'
 send(msg.chat_id_, msg.id_,Text) 
 end
 end
@@ -12401,7 +12401,7 @@ end
 if text == "نسبه الكره" or text == "نسبه كره" and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
 if not database:get(bot_id..'Cick:krh'..msg.chat_id_) then
 database:set(bot_id..":"..msg.sender_user_id_..":krh_Bots"..msg.chat_id_,"sendkrhe")
-Text = 'ارسل اسمك واسم الشخص الثاني،  \n مثال اسد و لبوى'
+Text = 'ارسل اسمك واسم الشخص الثاني،  \n مثال رسول و عسل'
 send(msg.chat_id_, msg.id_,Text) 
 end
 end
@@ -12429,7 +12429,7 @@ end
 if text == "نسبه الانوثه" or text == "نسبه انوثه" and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
 if not database:get(bot_id..'Cick:ano'..msg.chat_id_) then
 database:set(bot_id..":"..msg.sender_user_id_..":ano_Bots"..msg.chat_id_,"sendanoe")
-Text = 'ارسل اسم الشخص الذي تريد قياس نسبه انوثتها \n مثال جوري'
+Text = 'ارسل اسم الشخص الذي تريد قياس نسبه انوثتها \n مثال عذراء'
 send(msg.chat_id_, msg.id_,Text) 
 end
 end
