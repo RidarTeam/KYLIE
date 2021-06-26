@@ -12387,7 +12387,7 @@ end
 if text == "نسبه الحب" or text == "نسبه حب" and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
 if not database:get(bot_id..'Cick:lov'..msg.chat_id_) then
 database:set(bot_id..":"..msg.sender_user_id_..":lov_Bots"..msg.chat_id_,"sendlove")
-Text = 'ارسل اسمك واسم الشخص الثاني،  \n مثال علوش و وروان'
+Text = 'ارسل اسمك واسم الشخص الثاني،  \n مثال رسول و عسل'
 send(msg.chat_id_, msg.id_,Text) 
 end
 end
@@ -12401,7 +12401,7 @@ end
 if text == "نسبه الكره" or text == "نسبه كره" and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
 if not database:get(bot_id..'Cick:krh'..msg.chat_id_) then
 database:set(bot_id..":"..msg.sender_user_id_..":krh_Bots"..msg.chat_id_,"sendkrhe")
-Text = 'ارسل اسمك واسم الشخص الثاني،  \n مثال رسول و عسل'
+Text = 'ارسل اسمك واسم الشخص الثاني،  \n مثال علوش و روان'
 send(msg.chat_id_, msg.id_,Text) 
 end
 end
