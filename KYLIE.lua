@@ -9994,11 +9994,11 @@ send(msg.chat_id_, msg.id_,'*\n ꙳.︙صلاحيات البوت هي*\n⋆ ┉ 
 end
 end
 if text == "تعطيل الانستا" and Manager(msg) then
-send(msg.chat_id_, msg.id_, '*꙳. تم تعطيل الانستا*')
+send(msg.chat_id_, msg.id_, '*꙳.︙تم تعطيل الانستا*')
 database:set(bot_id.."ppppd:insta_bot"..msg.chat_id_,"close")
 end
 if text == "تفعيل الانستا" and Manager(msg) then
-send(msg.chat_id_, msg.id_,'*꙳. تم تفعيل الانستا*')
+send(msg.chat_id_, msg.id_,'*꙳.︙تم تفعيل الانستا*')
 database:set(bot_id.."ppppd:insta_bot"..msg.chat_id_,"open")
 end
 if text and text:match("^معلومات (.*)$") and database:get(bot_id.."ppppd:insta_bot"..msg.chat_id_) == "open" then
@@ -10180,7 +10180,7 @@ return false
 end
 if text == 'بوت' then
 Namebot = (database:get(bot_id..'Name:Bot') or 'كايلي')
-send(msg.chat_id_, msg.id_,'اسمـَيہ  ['..Namebot..'] ')
+send(msg.chat_id_, msg.id_,' اسمي الكيوت ['..Namebot..'] ')
 end
 if text == 'الاحصائيات' then
 if Sudo(msg) then 
