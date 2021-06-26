@@ -5660,7 +5660,7 @@ end
 function start_function(extra, result, success)
 database:sadd(bot_id..'Special:User'..msg.chat_id_, result.sender_user_id_)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
-usertext = '*\n ꙳.︙العضو » * ['..data.first_name_..'](t.me/'..(data.username_ or 'ppppd')..')'
+usertext = '*\n ꙳.︙العضو »* ['..data.first_name_..'](t.me/'..(data.username_ or 'ppppd')..')'
 local  statuss  = '*\n ꙳.︙تم ترقيته مميز*'
 send(msg.chat_id_, msg.id_, usertext..statuss)
 end,nil)
@@ -11912,7 +11912,7 @@ https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callb
 return false
 end
 local Teext =[[
-🏅∫𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁𝚂' 𝙾𝚁𝙳𝙴𝚁?? .
+🏅∫𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁𝚂' 𝙾𝚁??𝙴𝚁?? .
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆
 ꙳.︙اوامر المطورين ( 👥).
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆
