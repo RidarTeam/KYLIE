@@ -4788,7 +4788,7 @@ send(msg.chat_id_, msg.id_, texts)
 end
 if text == ("المدراء") and Constructor(msg) then
 local list = database:smembers(bot_id..'Manager'..msg.chat_id_)
-t = "\n *꙳.︙قائمة المدراء* \n⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆\n"
+t = "\n ꙳.︙قائمة المدراء \n⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -4804,7 +4804,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("تاك للمدراء") or text == ("صيح المدراء") then
 local list = database:smembers(bot_id..'Manager'..msg.chat_id_)
-t = "\n *꙳.︙وينكم تعالو يريدوكم بالكروب* \n⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆\n"
+t = "\n ꙳.︙وينكم تعالو يريدوكم بالكروب \n⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5024,7 +5024,7 @@ return false
 end
 if text == ("الثانويين") and SudoBot(msg) then
 local list = database:smembers(bot_id.."Dev:mode:2")
-t = "\n*꙳.︙قائمة مطورين الثانويين للبوت* \n⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆\n"
+t = "\n꙳.︙قائمة مطورين الثانويين للبوت \n⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5075,7 +5075,7 @@ send(msg.chat_id_, msg.id_, '* ꙳.︙تم مسح الادمنيه*')
 end
 if text == ("الادمنيه") and Manager(msg) then
 local list = database:smembers(bot_id..'Mod:User'..msg.chat_id_)
-t = "\n *꙳.︙قائمة الادمنيه* \n⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆\n"
+t = "\n ꙳.︙قائمة الادمنيه \n⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5091,7 +5091,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("تاك للادمنيه") or text == ("صيح الادمنيه") then
 local list = database:smembers(bot_id..'Mod:User'..msg.chat_id_)
-t = "\n *꙳.︙وينكم تعالو يريدوكم بالكروب* \n⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆\n"
+t = "\n ꙳.︙وينكم تعالو يريدوكم بالكروب \n⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5267,7 +5267,7 @@ send(msg.chat_id_, msg.id_, '* ꙳.︙تم مسح المنظفين*')
 end
 if text == ("المنظفين") and BasicConstructor(msg) then
 local list = database:smembers(bot_id..'MODE7:MN:TF'..msg.chat_id_)
-t = "\n *꙳.︙قائمة المنظفين* \n≪━━━━━━𝓓𝓡𝓖━━━━━━≫\n"
+t = "\n ꙳.︙قائمة المنظفين \n≪━━━━━━𝙆𝙮━━━━━━≫\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5283,7 +5283,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("تاك للمنظفين") or text == ("صيح المنظفين") then
 local list = database:smembers(bot_id..'MODE7:MN:TF'..msg.chat_id_)
-t = "\n *꙳.︙وينكم تعالو يريدوكم بالكروب* \n≪━━━━━━𝓓𝓡𝓖━━━━━━≫\n"
+t = "\n ꙳.︙وينكم تعالو يريدوكم بالكروب \n≪━━━━━━𝙆𝙮━━━━━━≫\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5603,7 +5603,7 @@ send(msg.chat_id_, msg.id_, '* ꙳.︙تم مسح المميزين*')
 end
 if text == ("المميزين") and Mod(msg) then
 local list = database:smembers(bot_id..'Special:User'..msg.chat_id_)
-t = "\n *꙳.︙قائمة مميزين الكروب* \n⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆\n"
+t = "\n ꙳.︙قائمة مميزين الكروب \n⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5619,7 +5619,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("تاك للمميزين") or text == ("صيح المميزين") then
 local list = database:smembers(bot_id..'Special:User'..msg.chat_id_)
-t = "\n *꙳.︙وينكم تعالو يريدوكم بالكروب* \n⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆\n"
+t = "\n ꙳.︙وينكم تعالو يريدوكم بالكروب \n⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -8203,11 +8203,11 @@ end
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,ta) 
 local link = database:get(bot_id.."Private:Group:Link"..msg.chat_id_)            
 if link then                              
-send(msg.chat_id_,msg.id_,'- 𝙇𝙞𝙣𝙠 ⇩\n≪━━━𝙎𝙉━━━≫\n ['..ta.title_..']('..link..')')                          
+send(msg.chat_id_,msg.id_,'- 𝙇𝙞𝙣𝙠 ⇩\n≪━━━𝙆𝙮━━━≫\n ['..ta.title_..']('..link..')')                          
 else                
 local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..token..'/exportChatInviteLink?chat_id='..msg.chat_id_))
 if linkgpp.ok == true then 
-linkgp = '- 𝙇𝙞𝙣𝙠 ⇩\n≪━━━𝙎𝙉━━━≫\n ['..ta.title_..']('..linkgpp.result..')'
+linkgp = '- 𝙇𝙞𝙣𝙠 ⇩\n≪━━━𝙆𝙮━━━≫\n ['..ta.title_..']('..linkgpp.result..')'
 else
 linkgp = 'لا يوجد رابط ارسل ` ضع رابط` لعمل رابط'
 end  
@@ -11367,7 +11367,7 @@ if text == 'رابط الحذف' or text == 'رابط حذف' then
 t =[[
 رابط الحذف في جميع مواقع التواصل ꙳.
 فكر قبل لا تتسرع وتروح
-≪─━─━─𝙎𝙉━─━─≫
+≪─━─━─𝙆𝙮━─━─≫
  ꙳. رابط حذف  [Telegram](https://my.telegram.org/auth?to=delete) ܁
  ꙳. رابط حذف [instagram](https://www.instagram.com/accounts/login/?next=/accounts/remove/request/permanent/) ܁
  ꙳. رابط حذف [Facebook](https://www.facebook.com/help/deleteaccount) ܁
