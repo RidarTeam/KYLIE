@@ -8547,7 +8547,7 @@ end
 c = c + 1
 end     
 if (c - x) == 0 then
-send(msg.chat_id_, msg.id_, " ꙳.︙لا توجد بوتات في الكروب")
+send(msg.chat_id_, msg.id_, "* ꙳.︙لا توجد بوتات في الكروب*")
 else
 local t = ' ꙳.︙عدد البوتات هنا >> {'..c..'}\n ꙳.︙عدد البوتات التي هي ادمن >> {'..x..'}\n ꙳.︙تم طرد >> {'..(c - x)..'} من البوتات'
 send(msg.chat_id_, msg.id_,t) 
