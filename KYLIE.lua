@@ -6711,7 +6711,7 @@ send(msg.chat_id_, msg.id_,'*꙳.︙البوت ليس ادمن يرجى ترقي
 return false  
 end
 database:sadd(bot_id..'Ban:User'..msg.chat_id_, result.id_)
-usertext = '\n ꙳.︙المستخدم » ['..result.title_..'](t.me/'..(username or 'GLOBLA')..')'
+usertext = '\n *꙳.︙المستخدم »* ['..result.title_..'](t.me/'..(username or 'GLOBLA')..')'
 status  = '\n *꙳.︙تم حظره*'
 texts = usertext..status
 chat_kick(msg.chat_id_, result.id_)
