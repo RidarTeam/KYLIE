@@ -8159,14 +8159,14 @@ end
 if text == "تفعيل رابط" or text == 'تفعيل الرابط' then
 if Mod(msg) then  
 database:set(bot_id.."Link_Group:status"..msg.chat_id_,true) 
-send(msg.chat_id_, msg.id_,"꙳.︙تم تفعيل الرابط ✓") 
+send(msg.chat_id_, msg.id_,"*꙳.︙تم تفعيل الرابط*") 
 return false  
 end
 end
 if text == "تعطيل رابط" or text == 'تعطيل الرابط' then
 if Mod(msg) then  
 database:del(bot_id.."Link_Group:status"..msg.chat_id_) 
-send(msg.chat_id_, msg.id_,"꙳.︙تم تعطيل الرابط ✘") 
+send(msg.chat_id_, msg.id_,"*꙳.︙تم تعطيل الرابط*") 
 return false end
 end
 if text == 'المطور' or text == 'مطور' then
@@ -8184,20 +8184,20 @@ end
 if text == "تفعيل صورتي" or text == 'تفعيل الصوره' then
 if Constructor(msg) then  
 database:set(bot_id.."my_photo:status"..msg.chat_id_,true) 
-send(msg.chat_id_, msg.id_," ꙳.︙تم تفعيل الصوره") 
+send(msg.chat_id_, msg.id_,"* ꙳.︙تم تفعيل الصوره*") 
 return false  
 end
 end
 if text == "تعطيل الصوره" or text == 'تعطيل صورتي' then
 if Constructor(msg) then  
 database:del(bot_id.."my_photo:status"..msg.chat_id_) 
-send(msg.chat_id_, msg.id_," ꙳.︙تم تعطيل الصوره") 
+send(msg.chat_id_, msg.id_,"* ꙳.︙تم تعطيل الصوره*") 
 return false end
 end
 if text == "الرابط" then 
 local status_Link = database:get(bot_id.."Link_Group:status"..msg.chat_id_)
 if not status_Link then
-send(msg.chat_id_, msg.id_,"الرابط معطل ✘") 
+send(msg.chat_id_, msg.id_,"*الرابط معطل*") 
 return false  
 end
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,ta) 
@@ -8226,7 +8226,7 @@ send(msg.chat_id_, msg.id_,' ꙳.︙لا تستطيع استخدام البوت 
 end
 return false
 end
-send(msg.chat_id_,msg.id_," ꙳.︙تم مسح الرابط")           
+send(msg.chat_id_,msg.id_,"* ꙳.︙تم مسح الرابط*")           
 database:del(bot_id.."Private:Group:Link"..msg.chat_id_) 
 return false      
 end
@@ -8634,6 +8634,12 @@ send(msg.chat_id_,msg.id_, Set_Rules)
 else      
 send(msg.chat_id_, msg.id_," ꙳.︙لا توجد قوانين")   
 end    
+end
+if text == "كت" or text == "كت تويت" then
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"وين تحب تسافر","فنانك المفضل","اسمك الحقيقي نفسه اسمك بالتلي؟؟","تحب منوو","تتوقع روحك بالجنه لو بالنار","اكثر دكه ناقصه شسويتها","تعرف شكد احبك","عيونك يالون","اسم التحبه/تحبي؟؟","هم تكره الشجر","تعرف حسون ؟؟"," سويت اخر شي؟؟","تدري انته كيك","‏ما هي الصفة التي تبتعد عن الآخرين بسببها . . . ؟.","فكرة خاطئة منتشرة عند البنات ؟.","هل مدمن ع شي متكدر تتركه","طفولتك حلوه؟","اذا رجعلك الحب الاول تبقة تحبه نفس الحب؟","كم وجبه تاكل باليوم؟","تحصيلك الدراسي؟","اغنيه عندك بيها ذكريات؟","لو الحرام اصبح حلال ما الشيئ الذي تفعله؟","تحب شخص يكرهك؟","الصديق ام المال؟"}
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
+end
 end
 if text == 'قفل التفليش' and msg.reply_to_message_id_ == 0 and Mod(msg) then 
 database:set(bot_id..'lock:tagrvrbot'..msg.chat_id_,true)   
@@ -9930,7 +9936,7 @@ texts = usertext..status
 send(msg.chat_id_, msg.id_, texts)
 https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..result.id_.."&can_change_info=false&can_delete_messages=false&can_invite_users=false&can_restrict_members=false&can_pin_messages=false&can_promote_members=false")
 else
-send(msg.chat_id_, msg.id_, '⚠¦ لا يوجد حساب بهاذا المعرف')
+send(msg.chat_id_, msg.id_, '꙳.︙لايوجد حساب بهذا المعرف ')
 end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil)
@@ -10510,7 +10516,7 @@ send(msg.chat_id_, msg.id_,' ꙳.︙لا استطيع اصيح معرف بوتا
 return false  
 end
 if result and result.type_ and result.type_.channel_ and result.type_.channel_.is_supergroup_ == true then
-send(msg.chat_id_, msg.id_,'⚠| لا اسطيع صيح معرفات الكروبات') 
+send(msg.chat_id_, msg.id_,'꙳.︙لا اسطيع صيح معرفات الكروب') 
 return false  
 end
 if result.id_ then
@@ -11606,7 +11612,7 @@ keyboard.inline_keyboard = {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
 },
 {
-{text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
+{text = '𝙏𝙚𝘼?? 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -12750,6 +12756,7 @@ end
 
 end -- end new msg dev.mr mode 
 end -- end callback dev.mr mode
+
 
 
 
