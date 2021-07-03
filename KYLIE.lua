@@ -2738,20 +2738,6 @@ send(msg.chat_id_, msg.id_,'* ꙳.︙تم حفظ الامر*')
 database:del(bot_id.."Set:Cmd:Group1"..msg.chat_id_..':'..msg.sender_user_id_)
 return false
 end
-if text == 'ترتيب الاوامر' and DevMod(msg) then
-database:del(bot_id..'help_text')
-database:del(bot_id..'help1_text')
-database:del(bot_id..'help2_text')
-database:del(bot_id..'help3_text')
-database:del(bot_id..'help4_text')
-database:del(bot_id..'help5_text')
-database:del(bot_id..'help6_text')
-database:del(bot_id..'help7_text')
-database:del(bot_id..'help8_text')
-database:del(bot_id..'help9_text')
-database:del(bot_id..'help10_text')
-send(msg.chat_id_, msg.id_, '*꙳.︙تم ترتيب الاوامر القديمه*')
-end
 --------------------------------------------------------------------------------------------------------------
 if text == 'قفل الدردشه' and msg.reply_to_message_id_ == 0 and Manager(msg) then 
 database:set(bot_id.."lock:text"..msg.chat_id_,true) 
@@ -8648,6 +8634,20 @@ send(msg.chat_id_,msg.id_, Set_Rules)
 else      
 send(msg.chat_id_, msg.id_,"* ꙳.︙لا توجد قوانين*")   
 end    
+end
+if text == 'ترتيب الاوامر' and DevMod(msg) then
+database:del(bot_id..'help_text')
+database:del(bot_id..'help1_text')
+database:del(bot_id..'help2_text')
+database:del(bot_id..'help3_text')
+database:del(bot_id..'help4_text')
+database:del(bot_id..'help5_text')
+database:del(bot_id..'help6_text')
+database:del(bot_id..'help7_text')
+database:del(bot_id..'help8_text')
+database:del(bot_id..'help9_text')
+database:del(bot_id..'help10_text')
+send(msg.chat_id_, msg.id_, '*꙳.︙تم ترتيب الاوامر القديمه*')
 end
 if text == "كت" or text == "كت تويت" then
 if not database:get(bot_id..'lock:add'..msg.chat_id_) then
