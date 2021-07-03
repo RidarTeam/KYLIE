@@ -2738,6 +2738,20 @@ send(msg.chat_id_, msg.id_,'* ꙳.︙تم حفظ الامر*')
 database:del(bot_id.."Set:Cmd:Group1"..msg.chat_id_..':'..msg.sender_user_id_)
 return false
 end
+if text == 'ترتيب الاوامر' and DevMod(msg) then
+database:del(bot_id..'help_text')
+database:del(bot_id..'help1_text')
+database:del(bot_id..'help2_text')
+database:del(bot_id..'help3_text')
+database:del(bot_id..'help4_text')
+database:del(bot_id..'help5_text')
+database:del(bot_id..'help6_text')
+database:del(bot_id..'help7_text')
+database:del(bot_id..'help8_text')
+database:del(bot_id..'help9_text')
+database:del(bot_id..'help10_text')
+send(msg.chat_id_, msg.id_, '*꙳.︙تم ترتيب الاوامر القديمه*')
+end
 --------------------------------------------------------------------------------------------------------------
 if text == 'قفل الدردشه' and msg.reply_to_message_id_ == 0 and Manager(msg) then 
 database:set(bot_id.."lock:text"..msg.chat_id_,true) 
@@ -11243,19 +11257,19 @@ https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. 
 return false
 end
 ----------------------------------------------------------------- انتهئ الاوامر الجديدة
-if text == "تعطيل الزغرفه" and Manager(msg) then
-send(msg.chat_id_, msg.id_, '꙳.︙تم تعطيل الزغرفه')
+if text == "تعطيل الزخرفه" and Manager(msg) then
+send(msg.chat_id_, msg.id_, '*꙳.︙تم تعطيل الزخرفه*')
 database:set(bot_id.." mode:zhrf_Bots"..msg.chat_id_,"close")
 end
-if text == "تفعيل الزغرفه" and Manager(msg) then
-send(msg.chat_id_, msg.id_,'꙳.︙تم تفعيل الزغرفه')
+if text == "تفعيل الزخرفه" and Manager(msg) then
+send(msg.chat_id_, msg.id_,'*꙳.︙تم تفعيل الزخرفه*')
 database:set(bot_id.." mode:zhrf_Bots"..msg.chat_id_,"open")
 end
-if text and text:match("^زغرفه (.*)$") and database:get(bot_id.." mode:zhrf_Bots"..msg.chat_id_) == "open" then
-local TextZhrfa = text:match("^زغرفه (.*)$")
+if text and text:match("^زخرفه (.*)$") and database:get(bot_id.." mode:zhrf_Bots"..msg.chat_id_) == "open" then
+local TextZhrfa = text:match("^زخرفه (.*)$")
 zh = https.request('https://rudi-dev.tk/Amir1/Boyka.php?en='..URL.escape(TextZhrfa)..'')
 zx = JSON.decode(zh)
-t = "\n꙳.︙قائمه الزغرفه \n⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆\n"
+t = "\n꙳.︙قائمه الزخرفه \n⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆\n"
 i = 0
 for k,v in pairs(zx.ok) do
 i = i + 1
@@ -11264,11 +11278,11 @@ end
 send(msg.chat_id_, msg.id_, t..'⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆ٴ\n꙳.︙꙳. [𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd) ')
 end
 if text == "تعطيل الابراج" and Manager(msg) then
-send(msg.chat_id_, msg.id_, '꙳.︙تم تعطيل الابراج')
+send(msg.chat_id_, msg.id_, '*꙳.︙تم تعطيل الابراج*')
 database:set(bot_id.." mode:brj_Bots"..msg.chat_id_,"close")
 end
 if text == "تفعيل الابراج" and Manager(msg) then
-send(msg.chat_id_, msg.id_,'꙳.︙تم تفعيل الابراج')
+send(msg.chat_id_, msg.id_,'*꙳.︙تم تفعيل الابراج*')
 database:set(bot_id.." mode:brj_Bots"..msg.chat_id_,"open")
 end
 if text and text:match("^برج (.*)$") and database:get(bot_id.." mode:brj_Bots"..msg.chat_id_) == "open" then
@@ -11283,15 +11297,15 @@ end
 send(msg.chat_id_, msg.id_, t)
 end
 if text == "تعطيل حساب العمر" and Manager(msg) then
-send(msg.chat_id_, msg.id_, '꙳.︙تم تعطيل حساب العمر')
+send(msg.chat_id_, msg.id_, '*꙳.︙تم تعطيل حساب العمر*')
 database:set(bot_id.." mode:age_Bots"..msg.chat_id_,"close")
 end
 if text == "تعطيل حساب العمر" and Manager(msg) then
-send(msg.chat_id_, msg.id_, '꙳.︙تم تعطيل حساب العمر')
+send(msg.chat_id_, msg.id_, '*꙳.︙تم تعطيل حساب العمر*')
 database:set(bot_id.." mode:age_Bots"..msg.chat_id_,"close")
 end
 if text == "تفعيل حساب العمر" and Manager(msg) then
-send(msg.chat_id_, msg.id_,'꙳.︙تم تفعيل حساب العمر')
+send(msg.chat_id_, msg.id_,'*꙳.︙تم تفعيل حساب العمر*')
 database:set(bot_id.." mode:age_Bots"..msg.chat_id_,"open")
 end
 if text and text:match("^احسب (.*)$") and database:get(bot_id.." mode:age_Bots"..msg.chat_id_) == "open" then
@@ -11306,11 +11320,11 @@ end
 send(msg.chat_id_, msg.id_, t)
 end
 if text == "تعطيل الافلام" and Mod(msg) then
-send(msg.chat_id_, msg.id_, '꙳.︙تم تعطيل الافلام')
+send(msg.chat_id_, msg.id_, '*꙳.︙تم تعطيل الافلام*')
 database:set(bot_id.."mode:movie_bot"..msg.chat_id_,"close")
 end
 if text == "تفعيل الافلام" and Mod(msg) then
-send(msg.chat_id_, msg.id_,'꙳.︙تم تفعيل الافلام')
+send(msg.chat_id_, msg.id_,'*꙳.︙تم تفعيل الافلام*')
 database:set(bot_id.."mode:movie_bot"..msg.chat_id_,"open")
 end
 if text and text:match("^فلم (.*)$") and database:get(bot_id.."mode:movie_bot"..msg.chat_id_) == "open" then
@@ -11516,7 +11530,7 @@ local Teext =[[
 *꙳.︙ضافني*
 *꙳.︙الرابط *
 *꙳.︙الحظر*
-**꙳.︙الرفع*
+*꙳.︙الرفع*
 *꙳.︙الايدي*
 *꙳.︙الالعاب*
 *꙳.︙ردود المطور*
@@ -11819,7 +11833,7 @@ keyboard.inline_keyboard = {
 },
 {
 {text = '↻ 𝘽𝙖𝙘𝙠 ↺', callback_data="/help"},
-},
+}
 {
 {text = '𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚', url="t.me/ppppd"},
 },
