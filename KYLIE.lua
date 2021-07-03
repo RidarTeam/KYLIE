@@ -10751,8 +10751,8 @@ local modea = {
 " ꙳.︙ حلوة حبيبي معليك بالمضغوطين",
 " ꙳.︙ جهرتك منورة ",
 " ꙳.︙ هاي شكد حلو انتة",
-" ꙳.︙ اصلا صوفي احلئ",
-" ꙳.︙ اصلا روظي احلئ",
+" ꙳.︙ اصلا علوش احلئ",
+" ꙳.︙ اصلا رسـو احلئ",
 " ꙳.︙ فديت الصاك محح",
 " ꙳.︙ فـدشـي عمـي",
 " ꙳.︙ دغـيرهـا شبـي هـاذ",
@@ -10860,7 +10860,7 @@ local Num = tonumber(database:get(bot_id..'Add:Contact'..msg.chat_id_..':'..msg.
 if Num == 0 then 
 Text = ' ꙳.︙ لم تقم بأضافه احد'
 else
-Text = ' ꙳.︙ عدد جهاتك *» { '..Num..' } *'
+Text = ' ꙳.︙ عدد جهاتك » { '..Num..' } *'
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
@@ -12393,7 +12393,7 @@ end
 if text == "نسبه الحب" or text == "نسبه حب" and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
 if not database:get(bot_id..'Cick:lov'..msg.chat_id_) then
 database:set(bot_id..":"..msg.sender_user_id_..":lov_Bots"..msg.chat_id_,"sendlove")
-Text = 'ارسل اسمك واسم الشخص الثاني،  \n مثال روظي و وروان'
+Text = 'ارسل اسمك واسم الشخص الثاني،  \n مثال : رسول و عذراء'
 send(msg.chat_id_, msg.id_,Text) 
 end
 end
@@ -12407,7 +12407,7 @@ end
 if text == "نسبه الكره" or text == "نسبه كره" and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
 if not database:get(bot_id..'Cick:krh'..msg.chat_id_) then
 database:set(bot_id..":"..msg.sender_user_id_..":krh_Bots"..msg.chat_id_,"sendkrhe")
-Text = 'ارسل اسمك واسم الشخص الثاني،  \n مثال اسد و لبوى'
+Text = 'ارسل اسمك واسم الشخص الثاني،  \n مثال : علش و عسل'
 send(msg.chat_id_, msg.id_,Text) 
 end
 end
@@ -12421,7 +12421,7 @@ end
 if text == "نسبه رجوله" or text == "نسبه الرجوله" and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
 if not database:get(bot_id..'Cick:rjo'..msg.chat_id_) then
 database:set(bot_id..":"..msg.sender_user_id_..":rjo_Bots"..msg.chat_id_,"sendrjoe")
-Text = 'ارسل اسم الشخص الذي تريد قياس نسبه رجولته \n مثال حرب'
+Text = 'ارسل اسم الشخص الذي تريد قياس نسبه رجولته \n مثال علش'
 send(msg.chat_id_, msg.id_,Text) 
 end
 end
@@ -12435,7 +12435,7 @@ end
 if text == "نسبه الانوثه" or text == "نسبه انوثه" and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
 if not database:get(bot_id..'Cick:ano'..msg.chat_id_) then
 database:set(bot_id..":"..msg.sender_user_id_..":ano_Bots"..msg.chat_id_,"sendanoe")
-Text = 'ارسل اسم الشخص الذي تريد قياس نسبه انوثتها \n مثال جوري'
+Text = 'ارسل اسم الشخص الذي تريد قياس نسبه انوثتها \n مثال عذراء'
 send(msg.chat_id_, msg.id_,Text) 
 end
 end
