@@ -886,8 +886,6 @@ local keyboard = {
 {'الاشتراك الاجباري ꙳.','وضع قناة الاشتراك ꙳.'},
 {'تفعيل البوت الخدمي ꙳.','تعطيل البوت الخدمي ꙳.'},
 {'تنظيف الكروبات ꙳.','تنظيف المشتركين ꙳.'},
-{'اضف كت تويت ꙳.'},
-{'حذف كت تويت ꙳.'},
 {'جلب نسخه الاحتياطيه ꙳.'},
 {'تحديث السورس ꙳.','الاصدار ꙳.'},
 {'معلومات السيرفر ꙳.'},
@@ -8637,26 +8635,119 @@ else
 send(msg.chat_id_, msg.id_,"* ꙳.︙لا توجد قوانين*")   
 end    
 end
-if text == "اضف كت تويت ꙳." and SudoBot(msg) then
-database:set(bot_id.."gamebot:Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_id_,true)
-return send(msg.chat_id_, msg.id_,"*ارسل السؤال الان *")
-end
-if text == "حذف كت تويت ꙳." and SudoBot(msg) then
-database:del(bot_id.."gamebot:List:Manager")
-return send(msg.chat_id_, msg.id_,"*تم حذف الاسئله*")
-end
-if text and text:match("^(.*)$") then
-if database:get(bot_id.."gamebot:Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_id_) == "true" then
-send(msg.chat_id_, msg.id_, '\n*تم حفظ السؤال بنجاح*')
-database:set(bot_id.."gamebot:Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_id_,"true1uu")
-database:sadd(bot_id.."gamebot:List:Manager", text)
-return false end
-end
 if text == "كت" or text == "كت تويت" then
-local list = database:smembers(bot_id..'gamebot:List:Manager')
-quschen = list[math.random(#list)]
-send(msg.chat_id_, msg.id_,quschen)
+if not database:get(bot_id..'lock:add'..msg.chat_id_) then
+local texting = {"*꙳ وين تحب تسافر*","*꙳ فنانك المفضل*","*꙳ اسمك الحقيقي نفسه اسمك بالتلي؟*","*꙳ تحب منوو*","*꙳ تتوقع روحك بالجنه لو بالنار؟*","*꙳ اكثر دكه ناقصه سويتها؟*","*꙳ تعرف شكد احبك؟*","*꙳ عيونك يالون؟*","*꙳ اسم التحبه/تحبي؟*","*꙳ هم تكره الشجر*","*꙳ تعرف رسو ؟*","*꙳ شنو سويت اخر شي؟*","*꙳ تدري انته كيك*","‏*꙳ ما هي الصفة التي تبتعد عن الآخرين بسببها . . . ؟*","*꙳ فكرة خاطئة منتشرة عند البنات ؟.*","*꙳ هل مدمن ع شي متكدر تتركه؟*","*꙳ طفولتك حلوه؟*","*꙳ اذا رجعلك الحب الاول تبقة تحبه نفس الحب؟*","*꙳ كم وجبه تاكل باليوم؟*","*꙳ تحصيلك الدراسي؟*","*꙳ اغنيه عندك بيها ذكريات؟*","*꙳ لو الحرام اصبح حلال ما اول شيئ تفعله؟*","*꙳ تحب شخص يكرهك؟*","*꙳ الصديق ام المال؟*","*꙳ وقت فرحك من أول شخص تكلمة.؟*","*꙳ منشن لشخص دكله اطلع من حياتي؟*","*꙳ لو اغمضت عيناك الان ماهوه الشيئ الذي ستفكر به ؟*","*꙳ شنو اسم امك؟*","*꙳ يوم تحبه؟*","*꙳ اغنيتك المفضله؟*","*꙳ تدخن ؟*","*꙳ تحب اهلك ؟*","*꙳ عمرك ؟*","*꙳ صفه تخليك تكره الشخص ؟*","*꙳ شكد جبت اعلى درجه بالمدرسه ؟*","*꙳ كم مره راسب ؟*","*꙳ شهر تحبه ؟*","*꙳ الصيف لو الشتاء ؟*","*꙳ مشهور تحبه ؟*","*꙳ اسم الي تحبه ؟*","*꙳ موقف محرج ؟*","*꙳ اكلتك المفضله ؟*","*꙳ ملسلسك المفضل؟*"}
+send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
 end
+end
+if text:match("^[/!#]([Ww][Ee][Aa][Tt][Hh][Ee][Rr]) (.*)$") or text:match("^(طقس) (.*)$") and faeder11(msg) then
+  MatchesEN = {text:match("^[/!#]([Ww][Ee][Aa][Tt][Hh][Ee][Rr]) (.*)$")}; MatchesFA = {text:match("^(طقس) (.*)$")}
+  Ptrn = MatchesEN[2] or MatchesFA[2]
+  local function temps(K)
+   local F = (K*1.8)-459.67
+   local C = K-273.15
+   return F,C
+  end
+  local res = http.request("http://api.openweathermap.org/data/2.5/weather?q="..URL.escape(Ptrn).."&appid=269ed82391822cc692c9afd59f4aabba")
+  local jtab = json:decode(res)
+  if jtab.name then
+   if jtab.weather[1].main == "Thunderstorm" then
+    status = "⛈ عاصف"
+   elseif jtab.weather[1].main == "Drizzle" then
+    status = "🌦 امطار خفيفه"
+   elseif jtab.weather[1].main == "Rain" then
+    status = "🌧 مطر شديد"
+   elseif jtab.weather[1].main == "Snow" then
+    status = "🌨 مثلج"
+   elseif jtab.weather[1].main == "Atmosphere" then
+    status = "🌫 مغبر"
+   elseif jtab.weather[1].main == "Clear" then
+    status = "🌤️ صاف"
+   elseif jtab.weather[1].main == "Clouds" then
+    status = "☁️ غائم"
+   elseif jtab.weather[1].main == "Extreme" then
+     status = "-------"
+   elseif jtab.weather[1].main == "Additional" then
+    status = "-------"
+   else
+    status = "-------"
+   end
+   local F1,C1 = temps(jtab.main.temp)
+   local F2,C2 = temps(jtab.main.temp_min)
+   local F3,C3 = temps(jtab.main.temp_max)
+   if jtab.rain then
+    rain = jtab.rain["3h"].." ميليمتر"
+   else
+    rain = "-----"
+   end
+   if jtab.snow then
+    snow = jtab.snow["3h"].." ميليمتر"
+   else
+    snow = "-----"
+   end
+   today = "• اسم المدينه : *"..jtab.name.."*\n"
+   .."• اسم الدوله : *"..(jtab.sys.country or "----").."*\n"
+   .."• درجه الحراره :\n"
+   .."   "..C1.."° سلليزي\n"
+   .."   "..F1.."° فهرنهايت\n"
+   .."   "..jtab.main.temp.."° كلفن\n"
+   .."• الجو "..status.." تقريبا\n\n"
+   .."• درجه حراره اليوم الصغرى : C"..C2.."°   F"..F2.."°   K"..jtab.main.temp_min.."°\n"
+   .."• درجه حراره اليوم الكبرى : C"..C3.."°   F"..F3.."°   K"..jtab.main.temp_max.."°\n"
+   .."• رطوبة الهواء : "..jtab.main.humidity.."%\n"
+   .."• كثافه الغيوم : "..jtab.clouds.all.."%\n"
+   .."• سرعه الرياح : "..(jtab.wind.speed or "------").." متر / ثانيه\n"
+   .."• اتجاه الرياح : "..(jtab.wind.deg or "------").."° درجه\n"
+   .."• تقلب الرياح : "..(jtab.main.pressure/1000).."\n"
+   .."• اخر 3 ساعات من المطر : "..rain.."\n"
+   .."• اخر 3 ساعات من تساقط الثلوج : "..snow.."\n\n"
+   after = ""
+   local res = http.request("http://api.openweathermap.org/data/2.5/weather?q="..URL.escape(Ptrn).."&appid=de8f6f3e0b7f8a36a3e05f47418643bf")
+   local jtab = json:decode(res)
+   for i=1,5 do
+    local F1,C1 = temps(jtab.list[i].main.temp_min)
+    local F2,C2 = temps(jtab.list[i].main.temp_max)
+    if jtab.list[i].weather[1].main == "Thunderstorm" then
+     status = "⛈ عاصف"
+    elseif jtab.list[i].weather[1].main == "Drizzle" then
+     status = "🌦 امطار خفيفه"
+    elseif jtab.list[i].weather[1].main == "Rain" then
+     status = "🌧 مطر شديد"
+    elseif jtab.list[i].weather[1].main == "Snow" then
+     status = "🌨 مثلج"
+    elseif jtab.list[i].weather[1].main == "Atmosphere" then
+     status = "🌫 مغبر"
+    elseif jtab.list[i].weather[1].main == "Clear" then
+     status = "🌤️صاف"
+    elseif jtab.list[i].weather[1].main == "Clouds" then
+     status = "☁️ غائم"
+    elseif jtab.list[i].weather[1].main == "Extreme" then
+     status = "-------"
+    elseif jtab.list[i].weather[1].main == "Additional" then
+     status = "-------"
+    else
+     status = "-------"
+    end
+    if i == 1 then
+     day = "• طقس يوم غد"
+    elseif i == 2 then
+     day = "• طقس بعد غد"
+    elseif i == 3 then
+     day = "• طقس بعد 3 ايام"
+    elseif i == 4 then
+     day = "• طقس بعد 4 ايام"
+    elseif i == 5 then
+      day = "• طقس بعد 5 ايام"
+    end
+    after = after.."- "..day..status.."تقريبا \n🔺C"..C2.."°  *-*  F"..F2.."°\n🔻C"..C1.."°  *-*  F"..F1.."°\n"
+   end
+   Text = today.."• حاله الطقس ل5 ايام القادمه 🔽:\n"..after
+   faederdx(msg.chat_id_, msg.id_, 1, Text, 1, 'md')
+  else
+   Text  = "*꙳.︙لا توجد مدينه بهذا الاسم*"
+   faederdx(msg.chat_id_, msg.id_, 1, Text, 1, 'md')
+  end end
 if text == 'قفل التفليش' and msg.reply_to_message_id_ == 0 and Mod(msg) then 
 database:set(bot_id..'lock:tagrvrbot'..msg.chat_id_,true)   
 list ={"lock:Bot:kick","lock:user:name","lock:Link","lock:forward","lock:Sticker","lock:Animation","lock:Video","lock:Fshar","lock:Fars","Bot:Id:Photo","lock:Audio","lock:vico","lock:Document","lock:Unsupported","lock:Markdaun","lock:Contact","lock:Spam"}
@@ -11547,6 +11638,7 @@ local Teext =[[
 ꙳.︙نسبه الكره
 ꙳.︙حساب العمر
 ꙳.︙الابراج
+꙳.︙طقس + اسم المدينة
 ꙳.︙تنبيه الاسماء
 ꙳.︙تنبيه المعرف
 ꙳.︙تنبيه الصور
