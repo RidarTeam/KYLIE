@@ -299,8 +299,6 @@ end
 function Rutba(user_id,chat_id)
 if tonumber(user_id) == tonumber(1214622341) then  
 var = 'مطور السورس'
-elseif tonumber(user_id) == tonumber(1553530032) then
-var = 'مبرمج السورس'
 elseif tonumber(user_id) == tonumber(SUDO) then
 var = 'المطور الاساسي'  
 elseif database:sismember(bot_id.."Dev:mode:2", user_id) then 
@@ -888,6 +886,8 @@ local keyboard = {
 {'الاشتراك الاجباري ꙳.','وضع قناة الاشتراك ꙳.'},
 {'تفعيل البوت الخدمي ꙳.','تعطيل البوت الخدمي ꙳.'},
 {'تنظيف الكروبات ꙳.','تنظيف المشتركين ꙳.'},
+{'اضف كت تويت ꙳.'},
+{'حذف كت تويت ꙳.'},
 {'جلب نسخه الاحتياطيه ꙳.'},
 {'تحديث السورس ꙳.','الاصدار ꙳.'},
 {'معلومات السيرفر ꙳.'},
@@ -8637,25 +8637,25 @@ else
 send(msg.chat_id_, msg.id_,"* ꙳.︙لا توجد قوانين*")   
 end    
 end
-if text == 'ترتيب الاوامر' and DevMod(msg) then
-database:del(bot_id..'help_text')
-database:del(bot_id..'help1_text')
-database:del(bot_id..'help2_text')
-database:del(bot_id..'help3_text')
-database:del(bot_id..'help4_text')
-database:del(bot_id..'help5_text')
-database:del(bot_id..'help6_text')
-database:del(bot_id..'help7_text')
-database:del(bot_id..'help8_text')
-database:del(bot_id..'help9_text')
-database:del(bot_id..'help10_text')
-send(msg.chat_id_, msg.id_, '*꙳.︙تم ترتيب الاوامر القديمه*')
+if text == "اضف كت تويت ꙳." and SudoBot(msg) then
+database:set(bot_id.."gamebot:Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_id_,true)
+return send(msg.chat_id_, msg.id_,"*ارسل السؤال الان *")
+end
+if text == "حذف كت تويت ꙳." and SudoBot(msg) then
+database:del(bot_id.."gamebot:List:Manager")
+return send(msg.chat_id_, msg.id_,"*تم حذف الاسئله*")
+end
+if text and text:match("^(.*)$") then
+if database:get(bot_id.."gamebot:Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_id_) == "true" then
+send(msg.chat_id_, msg.id_, '\n*تم حفظ السؤال بنجاح*')
+database:set(bot_id.."gamebot:Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_id_,"true1uu")
+database:sadd(bot_id.."gamebot:List:Manager", text)
+return false end
 end
 if text == "كت" or text == "كت تويت" then
-if not database:get(bot_id..'lock:add'..msg.chat_id_) then
-local texting = {"*꙳ وين تحب تسافر*","*꙳ فنانك المفضل*","*꙳ اسمك الحقيقي نفسه اسمك بالتلي؟*","*꙳ تحب منوو*","*꙳ تتوقع روحك بالجنه لو بالنار؟*","*꙳ اكثر دكه ناقصه سويتها؟*","*꙳ تعرف شكد احبك؟*","*꙳ عيونك يالون؟*","*꙳ اسم التحبه/تحبي؟*","*꙳ هم تكره الشجر*","*꙳ تعرف رسو ؟*","*꙳ شنو سويت اخر شي؟*","*꙳ تدري انته كيك*","‏*꙳ ما هي الصفة التي تبتعد عن الآخرين بسببها . . . ؟*","*꙳ فكرة خاطئة منتشرة عند البنات ؟.*","*꙳ هل مدمن ع شي متكدر تتركه؟*","*꙳ طفولتك حلوه؟*","*꙳ اذا رجعلك الحب الاول تبقة تحبه نفس الحب؟*","*꙳ كم وجبه تاكل باليوم؟*","*꙳ تحصيلك الدراسي؟*","*꙳ اغنيه عندك بيها ذكريات؟*","*꙳ لو الحرام اصبح حلال ما اول شيئ تفعله؟*","*꙳ تحب شخص يكرهك؟*","*꙳ الصديق ام المال؟*","*꙳ وقت فرحك من أول شخص تكلمة.؟*","*꙳ منشن لشخص دكله اطلع من حياتي؟*","*꙳ لو اغمضت عيناك الان ماهوه الشيئ الذي ستفكر به ؟*","*꙳ شنو اسم امك؟*","*꙳ يوم تحبه؟*","*꙳ اغنيتك المفضله؟*","*꙳ تدخن ؟*","*꙳ تحب اهلك ؟*","*꙳ عمرك ؟*","*꙳ صفه تخليك تكره الشخص ؟*","*꙳ شكد جبت اعلى درجه بالمدرسه ؟*","*꙳ كم مره راسب ؟*","*꙳ شهر تحبه ؟*","*꙳ الصيف لو الشتاء ؟*","*꙳ مشهور تحبه ؟*","*꙳ اسم الي تحبه ؟*","*꙳ موقف محرج ؟*","*꙳ اكلتك المفضله ؟*","*꙳ ملسلسك المفضل؟*"}
-send(msg.chat_id_, msg.id_, ''..texting[math.random(#texting)]..'')
-end
+local list = database:smembers(bot_id..'gamebot:List:Manager')
+quschen = list[math.random(#list)]
+send(msg.chat_id_, msg.id_,quschen)
 end
 if text == 'قفل التفليش' and msg.reply_to_message_id_ == 0 and Mod(msg) then 
 database:set(bot_id..'lock:tagrvrbot'..msg.chat_id_,true)   
