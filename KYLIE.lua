@@ -2738,6 +2738,20 @@ send(msg.chat_id_, msg.id_,'* ꙳.︙تم حفظ الامر*')
 database:del(bot_id.."Set:Cmd:Group1"..msg.chat_id_..':'..msg.sender_user_id_)
 return false
 end
+if text == 'ترتيب الاوامر' and DevMod(msg) then
+database:del(bot_id..'help_text')
+database:del(bot_id..'help1_text')
+database:del(bot_id..'help2_text')
+database:del(bot_id..'help3_text')
+database:del(bot_id..'help4_text')
+database:del(bot_id..'help5_text')
+database:del(bot_id..'help6_text')
+database:del(bot_id..'help7_text')
+database:del(bot_id..'help8_text')
+database:del(bot_id..'help9_text')
+database:del(bot_id..'help10_text')
+send(msg.chat_id_, msg.id_, '*꙳.︙تم ترتيب الاوامر القديمه*')
+end
 --------------------------------------------------------------------------------------------------------------
 if text == 'قفل الدردشه' and msg.reply_to_message_id_ == 0 and Manager(msg) then 
 database:set(bot_id.."lock:text"..msg.chat_id_,true) 
@@ -11756,7 +11770,7 @@ local Teext =[[
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆
 ꙳.︙ الاوامر كالتالي ♻️ ↓
 ⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆
-꙳.︙استعاده الاوامر 
+꙳.︙ترتيب الاوامر 
 ꙳.︙تحويل كالاتي~⪼ بالرد على صوره او ملصق او صوت او بصمه بالامر ← تحويل 
 ꙳.︙صيح ~ تاك ~ المميزين : الادمنيه : المدراء : المنشئين : المنشئين الاساسين
 ꙳.︙كشف القيود
@@ -12104,7 +12118,7 @@ https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callb
 return false
 end
 local Teext =[[
-𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙆𝙮𝙡𝙞𝙚 𝙄𝙣𝙛𝙤  💭
+𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙩?? 𝙆𝙮𝙡𝙞𝙚 𝙄𝙣𝙛𝙤  💭
 *⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆*
 *⑴◂ اوامر الحمايه .*
 *⑵◂ اوامر تعطيل ~ تفعيل .*
@@ -12393,7 +12407,7 @@ end
 if text == "نسبه الحب" or text == "نسبه حب" and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
 if not database:get(bot_id..'Cick:lov'..msg.chat_id_) then
 database:set(bot_id..":"..msg.sender_user_id_..":lov_Bots"..msg.chat_id_,"sendlove")
-Text = 'ارسل اسمك واسم الشخص الثاني،  \n مثال روظي و وروان'
+Text = 'ارسل اسمك واسم الشخص الثاني،  \n مثال رسول و عذراء'
 send(msg.chat_id_, msg.id_,Text) 
 end
 end
@@ -12407,7 +12421,7 @@ end
 if text == "نسبه الكره" or text == "نسبه كره" and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
 if not database:get(bot_id..'Cick:krh'..msg.chat_id_) then
 database:set(bot_id..":"..msg.sender_user_id_..":krh_Bots"..msg.chat_id_,"sendkrhe")
-Text = 'ارسل اسمك واسم الشخص الثاني،  \n مثال اسد و لبوى'
+Text = 'ارسل اسمك واسم الشخص الثاني،  \n مثال علش و عسل'
 send(msg.chat_id_, msg.id_,Text) 
 end
 end
@@ -12421,7 +12435,7 @@ end
 if text == "نسبه رجوله" or text == "نسبه الرجوله" and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
 if not database:get(bot_id..'Cick:rjo'..msg.chat_id_) then
 database:set(bot_id..":"..msg.sender_user_id_..":rjo_Bots"..msg.chat_id_,"sendrjoe")
-Text = 'ارسل اسم الشخص الذي تريد قياس نسبه رجولته \n مثال حرب'
+Text = 'ارسل اسم الشخص الذي تريد قياس نسبه رجولته \n مثال علش'
 send(msg.chat_id_, msg.id_,Text) 
 end
 end
@@ -12435,7 +12449,7 @@ end
 if text == "نسبه الانوثه" or text == "نسبه انوثه" and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
 if not database:get(bot_id..'Cick:ano'..msg.chat_id_) then
 database:set(bot_id..":"..msg.sender_user_id_..":ano_Bots"..msg.chat_id_,"sendanoe")
-Text = 'ارسل اسم الشخص الذي تريد قياس نسبه انوثتها \n مثال جوري'
+Text = 'ارسل اسم الشخص الذي تريد قياس نسبه انوثتها \n مثال عذراء'
 send(msg.chat_id_, msg.id_,Text) 
 end
 end
