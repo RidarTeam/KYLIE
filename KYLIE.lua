@@ -298,7 +298,7 @@ return var
 end 
 function Rutba(user_id,chat_id)
 if tonumber(user_id) == tonumber(1214622341) then  
-var = 'مطور السورس'
+var = 'مطوره السورس'
 elseif tonumber(user_id) == tonumber(SUDO) then
 var = 'المطور الاساسي'  
 elseif database:sismember(bot_id.."Dev:mode:2", user_id) then 
@@ -8180,7 +8180,7 @@ end
 if text == 'ضع ترحيب' or text == 'وضع ترحيب' then  
 if Mod(msg) then
 database:setex(bot_id.."Welcome:Group" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 120, true)  
-t  = ' ꙳.︙ارسل لي الترحيب الان'
+t  = '* ꙳.︙ارسل لي الترحيب الان*'
 tt = '\n ꙳.︙تستطيع اضافة مايلي !\n ꙳.︙دالة عرض الاسم »{`name`}\n ꙳.︙دالة عرض المعرف »{`user`}'
 send(msg.chat_id_, msg.id_,t..tt) 
 end
@@ -8191,7 +8191,7 @@ local GetWelcomeGroup = database:get(bot_id..'Get:Welcome:Group'..msg.chat_id_)
 if GetWelcomeGroup then 
 GetWelcome = GetWelcomeGroup
 else 
-GetWelcome = ' ꙳.︙لم يتم تعيين ترحيب للكروب'
+GetWelcome = '* ꙳.︙لم يتم تعيين ترحيب للكروب*'
 end 
 send(msg.chat_id_, msg.id_,'['..GetWelcome..']') 
 return false  
@@ -8207,7 +8207,7 @@ end
 return false
 end
 database:set(bot_id..'Chek:Welcome'..msg.chat_id_,true) 
-send(msg.chat_id_, msg.id_,' ꙳.︙تم تفعيل ترحيب الكروب') 
+send(msg.chat_id_, msg.id_,'* ꙳.︙تم تفعيل ترحيب الكروب*') 
 return false  
 end
 if text == 'تعطيل الترحيب' and Mod(msg) then  
@@ -8221,24 +8221,24 @@ end
 return false
 end
 database:del(bot_id..'Chek:Welcome'..msg.chat_id_) 
-send(msg.chat_id_, msg.id_,' ꙳.︙تم تعطيل ترحيب الكروب') 
+send(msg.chat_id_, msg.id_,'* ꙳.︙تم تعطيل ترحيب الكروب*') 
 return false  
 end
 if text == 'مسح الترحيب' or text == 'حذف الترحيب' then 
 if Mod(msg) then
 database:del(bot_id..'Get:Welcome:Group'..msg.chat_id_) 
-send(msg.chat_id_, msg.id_,' ꙳.︙تم ازالة ترحيب الكروب') 
+send(msg.chat_id_, msg.id_,'* ꙳.︙تم ازالة ترحيب الكروب*') 
 end
 end
 if text and text == "منع" and msg.reply_to_message_id_ == 0 and Manager(msg)  then       
-send(msg.chat_id_, msg.id_," ꙳.︙ارسل الكلمه لمنعها")  
+send(msg.chat_id_, msg.id_,"* ꙳.︙ارسل الكلمه لمنعها*")  
 database:set(bot_id.."KYLIE1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_,"rep")  
 return false  
 end    
 if text then   
 local tsssst = database:get(bot_id.."KYLIE1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
 if tsssst == "rep" then   
-send(msg.chat_id_, msg.id_," ꙳.︙ارسل التحذير عند ارسال الكلمه")  
+send(msg.chat_id_, msg.id_,"* ꙳.︙ارسل التحذير عند ارسال الكلمه*")  
 database:set(bot_id.."KYLIE1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_,"repp")  
 database:set(bot_id.."KYLIE1:filtr1:add:reply2"..msg.sender_user_id_..msg.chat_id_, text)  
 database:sadd(bot_id.."KYLIE1:List:Filter"..msg.chat_id_,text)  
@@ -8247,7 +8247,7 @@ end
 if text then  
 local test = database:get(bot_id.."KYLIE1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
 if test == "repp" then  
-send(msg.chat_id_, msg.id_," ꙳.︙تم منع الكلمه مع التحذير")  
+send(msg.chat_id_, msg.id_,"* ꙳.︙تم منع الكلمه مع التحذير*")  
 database:del(bot_id.."KYLIE1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
 local test = database:get(bot_id.."KYLIE1:filtr1:add:reply2"..msg.sender_user_id_..msg.chat_id_)  
 if text then   
@@ -8258,13 +8258,13 @@ return false  end
 end
 
 if text == "الغاء منع" and msg.reply_to_message_id_ == 0 and Manager(msg) then    
-send(msg.chat_id_, msg.id_," ꙳.︙ارسل الكلمه الان")  
+send(msg.chat_id_, msg.id_,"* ꙳.︙ارسل الكلمه الان*")  
 database:set(bot_id.."KYLIE1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_,"reppp")  
 return false  end
 if text then 
 local test = database:get(bot_id.."KYLIE1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
 if test and test == "reppp" then   
-send(msg.chat_id_, msg.id_," ꙳.︙تم الغاء منعها")  
+send(msg.chat_id_, msg.id_,"* ꙳.︙تم الغاء منعها*")  
 database:del(bot_id.."KYLIE1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
 database:del(bot_id.."KYLIE1:Add:Filter:Rp2"..text..msg.chat_id_)  
 database:srem(bot_id.."KYLIE1:List:Filter"..msg.chat_id_,text)  
@@ -8773,7 +8773,7 @@ elseif blakrt == 'عضو' and Mod(msg) then
 send(msg.chat_id_, msg.id_,'\n *꙳.︙العضو »* ['..result.title_..'](t.me/'..(text1[3] or 'ppppd')..')'..'\n ꙳.︙تم رفعه '..text1[2]..'')   
 end
 else
-info = ' ꙳.︙المعرف غلط'
+info = '* ꙳.︙المعرف غلط*'
 send(msg.chat_id_, msg.id_,info)
 end
 end
@@ -8811,7 +8811,7 @@ elseif blakrt == 'عضو' and Mod(msg) then
 send(msg.chat_id_, msg.id_,'\n *꙳.︙العضو »* ['..result.title_..'](t.me/'..(text1[3] or 'ppppd')..')'..'\n ꙳.︙تم تنريله من '..text1[2]..'')   
 end
 else
-info = ' ꙳.︙المعرف غلط'
+info = '* ꙳.︙المعرف غلط*'
 send(msg.chat_id_, msg.id_,info)
 end
 end
@@ -8819,7 +8819,7 @@ tdcli_function ({ID = "SearchPublicChat",username_ = text1[3]},py_username,nil)
 end  
 end
 if text == "مسح رسايلي" or text == "مسح رسائلي" or text == "حذف رسايلي" or text == "حذف رسائلي" then  
-send(msg.chat_id_, msg.id_,' ꙳.︙تم مسح رسائلك'  )  
+send(msg.chat_id_, msg.id_,'* ꙳.︙تم مسح رسائلك*')  
 database:del(bot_id..'Msg_User'..msg.chat_id_..':'..msg.sender_user_id_) 
 end
 if text == "رسايلي" or text == "رسائلي" or text == "msg" then 
@@ -8832,7 +8832,7 @@ send(msg.chat_id_, msg.id_,' ꙳.︙لا تستطيع استخدام البوت 
 end
 return false
 end
-send(msg.chat_id_, msg.id_,' ꙳.︙عدد رسائلك » { '..database:get(bot_id..'Msg_User'..msg.chat_id_..':'..msg.sender_user_id_)..'}' ) 
+send(msg.chat_id_, msg.id_,'* ꙳.︙عدد رسائلك » { '..database:get(bot_id..'Msg_User'..msg.chat_id_..':'..msg.sender_user_id_)..'}*' ) 
 end 
 if text == 'تفعيل الاذاعه' and Devmode(msg) then  
 if database:get(bot_id..'Bc:Bots') then
@@ -10904,7 +10904,7 @@ end
 if database:get(bot_id.."gemadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then 
 if text and text:match("^الغاء$") then 
 database:del(bot_id..'idgem:user'..msg.chat_id_)  
-send(msg.chat_id_, msg.id_, " ꙳.︙ تم الغاء الامر ") 
+send(msg.chat_id_, msg.id_, "* ꙳.︙ تم الغاء الامر *") 
 database:del(bot_id.."gemadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
 return false  
 end 
@@ -10919,7 +10919,7 @@ if text and text:match("^اضف رسائل (%d+)$") and msg.reply_to_message_id_
 mode = text:match("^اضف رسائل (%d+)$")
 database:set(bot_id..'id:user'..msg.chat_id_,mode)  
 database:setex(bot_id.."numadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 120, true)  
-send(msg.chat_id_, msg.id_, ' ꙳.︙ ارسل لي عدد الرسائل الان') 
+send(msg.chat_id_, msg.id_, '* ꙳.︙ ارسل لي عدد الرسائل الان*') 
 return false
 end
 ------------------------------------------------------------------------
@@ -10927,7 +10927,7 @@ if text and text:match("^اضف نقاط (%d+)$") and msg.reply_to_message_id_ =
 mode = text:match("^اضف نقاط (%d+)$")
 database:set(bot_id..'idgem:user'..msg.chat_id_,mode)  
 database:setex(bot_id.."gemadd:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 120, true)  
-send(msg.chat_id_, msg.id_, ' ꙳.︙ ارسل لي عدد النقاط التي تريد اضافتها') 
+send(msg.chat_id_, msg.id_, '* ꙳.︙ ارسل لي عدد النقاط التي تريد اضافتها*') 
 return false
 end
 ------------------------------------------------------------------------
@@ -11161,19 +11161,19 @@ https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. 
 return false
 end
 ----------------------------------------------------------------- انتهئ الاوامر الجديدة
-if text == "تعطيل الزغرفه" and Manager(msg) then
-send(msg.chat_id_, msg.id_, '꙳.︙ تم تعطيل الزغرفه')
+if text == "تعطيل الزخرفه" and Manager(msg) then
+send(msg.chat_id_, msg.id_, '*꙳.︙ تم تعطيل الزخرفه*')
 database:set(bot_id.." mode:zhrf_Bots"..msg.chat_id_,"close")
 end
-if text == "تفعيل الزغرفه" and Manager(msg) then
-send(msg.chat_id_, msg.id_,'꙳.︙ تم تفعيل الزغرفه')
+if text == "تفعيل الزخرفه" and Manager(msg) then
+send(msg.chat_id_, msg.id_,'*꙳.︙ تم تفعيل الزخرفه*')
 database:set(bot_id.." mode:zhrf_Bots"..msg.chat_id_,"open")
 end
-if text and text:match("^زغرفه (.*)$") and database:get(bot_id.." mode:zhrf_Bots"..msg.chat_id_) == "open" then
-local TextZhrfa = text:match("^زغرفه (.*)$")
+if text and text:match("^زخرفه (.*)$") and database:get(bot_id.." mode:zhrf_Bots"..msg.chat_id_) == "open" then
+local TextZhrfa = text:match("^زخرفه (.*)$")
 zh = https.request('https://rudi-dev.tk/Amir1/Boyka.php?en='..URL.escape(TextZhrfa)..'')
 zx = JSON.decode(zh)
-t = "\n꙳.︙ قائمه الزغرفه \n⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆\n"
+t = "\n꙳.︙ قائمه الزخرفه \n⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆\n"
 i = 0
 for k,v in pairs(zx.ok) do
 i = i + 1
@@ -12276,7 +12276,7 @@ data.message_.content_.text_ = (NewCmmd or data.message_.content_.text_)
 end
 end
 if (text and text == "*تعطيل اوامر التحشيش*") then 
-send(msg.chat_id_, msg.id_, ' ꙳.︙ تم تعطيل اوامر التحشيش')
+send(msg.chat_id_, msg.id_, '* ꙳.︙ تم تعطيل اوامر التحشيش*')
 database:set(bot_id.."Fun_Bots:"..msg.chat_id_,"true")
 end
 if (text and text == "*تفعيل اوامر التحشيش*") then 
