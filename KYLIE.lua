@@ -298,7 +298,7 @@ return var
 end 
 function Rutba(user_id,chat_id)
 if tonumber(user_id) == tonumber(1214622341) then  
-var = 'مطوره السورس'
+var = 'مطور السورس'
 elseif tonumber(user_id) == tonumber(SUDO) then
 var = 'المطور الاساسي'  
 elseif database:sismember(bot_id.."Dev:mode:2", user_id) then 
@@ -10094,7 +10094,7 @@ return false
 end
 if text == 'بوت' then
 Namebot = (database:get(bot_id..'Name:Bot') or 'كايلي')
-send(msg.chat_id_, msg.id_,'اسمي الكيوت ['..Namebot..'] ')
+send(msg.chat_id_, msg.id_,'*اسمَـيہ ['..Namebot..'] *')
 end
 if text == 'الاحصائيات' then
 if Sudo(msg) then 
@@ -10235,7 +10235,7 @@ end
 if text == 'تفعيل الرفع' and Constructor(msg) then   
 if database:get(bot_id..'Lock:Add:Bot'..msg.chat_id_)  then
 database:del(bot_id..'Lock:Add:Bot'..msg.chat_id_) 
-Text = '\n *꙳.︙تم تفعيل الرف*ع' 
+Text = '\n *꙳.︙تم تفعيل الرفع*' 
 else
 Text = '\n *꙳.︙بالتاكيد تم تفعيل الرفع*'
 end
@@ -10626,7 +10626,7 @@ local List = {
 ]]}
 local Text_Rand = List[math.random(#List)]
 database:set(bot_id.."KLISH:ID"..msg.chat_id_,Text_Rand)
-send(msg.chat_id_, msg.id_,'꙳.︙ تم تغير الايدي ارسل ايدي لرؤيته')
+send(msg.chat_id_, msg.id_,'*꙳.︙ تم تغير الايدي ارسل ايدي لرؤيته*')
 end
 if text == ("ايدي") and msg.reply_to_message_id_ == 0 and not database:get(bot_id..'Bot:Id'..msg.chat_id_) then     
 if AddChannel(msg.sender_user_id_) == false then
