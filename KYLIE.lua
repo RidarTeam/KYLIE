@@ -2738,8 +2738,6 @@ send(msg.chat_id_, msg.id_,'* ꙳.︙تم حفظ الامر*')
 database:del(bot_id.."Set:Cmd:Group1"..msg.chat_id_..':'..msg.sender_user_id_)
 return false
 end
--- ها فرخ داتخمط لكود خاص سورس كايلي
--- 🖕😂😂 اخالله
 if text == "ترتيب الاوامر" and Constructor(msg) then
  database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":ا","ايدي")
  database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"ا")
