@@ -2741,6 +2741,14 @@ end
 if text == "ترتيب الاوامر" and Constructor(msg) then
  database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":ا","ايدي")
  database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"ا")
+  database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":بنعال","حظر")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"بنعال")
+   database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":دي","طرد")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"دي")
+  database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":اش","كتم")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"اش")
+  database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":تق","تقيد")
+ database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"تق")
  database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":م","رفع مميز")
  database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"م")
  database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":اد","رفع ادمن")
@@ -2755,7 +2763,7 @@ if text == "ترتيب الاوامر" and Constructor(msg) then
  database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"تعط")
  database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":تفع","تفعيل الايدي بالصوره")
  database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"تفع")
- send(msg.chat_id_, msg.id_,"☆:تم ترتيب الاوامر بالشكل التالي ~\n- ايدي - ا .\n- مميز - م .\n- ادمن - اد .\n- مدير - مد . \n- منشى - من . \n- المنشئ الاساسي - اس . \n- تعطيل الايدي بالصوره - تعط .\n- تفعيل الايدي بالصوره - تفع .")
+ send(msg.chat_id_, msg.id_,"*꙳.︙تم ترتيب الاوامر بالشكل التالي ~*\n- ايدي ꙳. ا . \n- طرد ꙳. دي . \n- حظر ꙳. بنعال . \n- كتم ꙳. اش . \n- مميز ꙳. م .\n- ادمن ꙳. اد .\n- مدير ꙳. مد . \n- منشى ꙳. من . \n- المنشئ الاساسي ꙳. اس . \n- تعطيل الايدي بالصوره ꙳. تعط .\n- تفعيل الايدي بالصوره ꙳. تفع .")
  end
 --------------------------------------------------------------------------------------------------------------
 if text == 'قفل الدردشه' and msg.reply_to_message_id_ == 0 and Manager(msg) then 
