@@ -887,7 +887,8 @@ local keyboard = {
 {'تفعيل البوت الخدمي ꙳.','تعطيل البوت الخدمي ꙳.'},
 {'تنظيف الكروبات ꙳.','تنظيف المشتركين ꙳.'},
 {'جلب نسخه الاحتياطيه ꙳.'},
-{'تحديث السورس ꙳.','الاصدار ꙳.'},
+{'تغيير المطور الاساسي ꙳.','تحديث السورس ꙳.'},
+{'الاصدار ꙳.'},
 {'معلومات السيرفر ꙳.'},
 {'الغاء ꙳.'},
 }
@@ -1004,6 +1005,29 @@ else
 Text = '\n ꙳.︙بالتاكيد تم تعطيل التواصل'
 end
 send(msg.chat_id_, msg.id_,Text) 
+end
+if text =='تغيير المطور الاساسي ꙳.' then
+send(msg.chat_id_, msg.id_,'❏ : ارسل ايدي المطور الاساسي الجديد')
+database:set(bot_id..'LACKBOTSS:Ed:DevBots',true) 
+end
+if database:get(bot_id.."LACKBOTSS:Ed:DevBots") then
+if text and text:match("^(%d+)$") then
+local IdDe = text:match("^(%d+)$")
+send(msg.chat_id_,msg.id_, "❏ : تم تحفظ المعلومات اضغط ( تحديث الملفات ❏ ) للتنفيذ")
+tdcli_function ({ID = "GetUser",user_id_ = text},function(arg,data) 
+local Zc = "@"..data.username_
+local A = io.open("sudo.lua", 'w')
+A:write([[
+token = "]]..token..[["
+
+Sudo = ]]..IdDe..[[  
+
+UserName = "]]..Zc..[["
+]])
+A:close()
+database:del(bot_id.."LACKBOTSS:Ed:DevBots")
+end,nil)
+end
 end
 if text == 'تفعيل البوت الخدمي ꙳.' and Devmode(msg) then  
 if database:get(bot_id..'Free:Bots') then
@@ -3668,6 +3692,31 @@ status  = '\n *꙳.︙تم حظره عام من الكروبات*'
 send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 return false
+end
+if text =='تغيير المطور الاساسي' and VIP_DeV(msg) then
+send(msg.chat_id_, msg.id_,'• ارسل ايدي المطور الاساسي الجديد')
+database:set(bot_id..'LACKBOTSS:Ed:DevBots',true) 
+end
+if text =='تغيير المطور الاساسي' and not VIP_DeV(msg) then
+send(msg.chat_id_, msg.id_,'تسرسح')
+end
+if database:get(bot_id.."LACKBOTSS:Ed:DevBots") then
+if text and text:match("^(%d+)$") then
+local IdDe = text:match("^(%d+)$")
+send(msg.chat_id_,msg.id_, "• تم تحفظ المعلومات اضغط ( تحديث الملفات• ) للتنفيذ")
+local A = io.open("sudo.lua", 'w')
+A:write([[
+s = "PPPPD"
+
+q = "KYLIETEAM"
+
+token = "]]..token..[["
+
+Sudo = ]]..IdDe..[[  
+]])
+A:close()
+database:del(bot_id.."LACKBOTSS:Ed:DevBots")
+end
 end
 if text == ("كتم عام") and msg.reply_to_message_id_ and Devmode(msg) then
 if AddChannel(msg.sender_user_id_) == false then
@@ -7765,7 +7814,7 @@ else
 lock_muse = '🔐'    
 end 
 if database:get(bot_id.."lock:Video"..msg.chat_id_) == "del" then
-lock_ved = '🔓'
+lock_ved = '??'
 elseif database:get(bot_id.."lock:Video"..msg.chat_id_) == "ked" then 
 lock_ved = 'بالتقيد'    
 elseif database:get(bot_id.."lock:Video"..msg.chat_id_) == "ktm" then 
