@@ -11209,15 +11209,15 @@ end
 send(msg.chat_id_, msg.id_, t..'⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆ٴ\n꙳.︙꙳. [𝙏𝙚𝘼𝙢 𝙆𝙮𝙡𝙞𝙚](t.me/ppppd) ')
 end
 if text == 'تعطيل الالعاب الاحترافيه' and Mod(msg) and msg.reply_to_message_id_ == 0 then 
-database:set(bot_id..'lockGeamVip'..msg.chat_id_,true)  
+database:set(bot_id..'lock:geam'..msg.chat_id_,true)  
 send(msg.chat_id_, msg.id_,'*꙳.︙تم تعطيل الالعاب الاحترافيه*')
 end
 if text == 'تفعيل الالعاب الاحترافيه' and Mod(msg) and msg.reply_to_message_id_ == 0 then 
-database:del(bot_id..'lockGeamVip'..msg.chat_id_)  
+database:del(bot_id..'lock:geam'..msg.chat_id_)  
 send(msg.chat_id_, msg.id_,'*꙳.︙تم تفعيل الالعاب الاحترافيه*')
 end
 if text == 'الالعاب الاحترافيه' and Special(msg) then  
-if not database:get(bot_id..'lockGeamVip'..msg.chat_id_) then
+if not database:get(bot_id..'lock:geam'..msg.chat_id_) then
 _key = {
 {{text="♟ Chess Game ♟",url='https://t.me/PZ6bot?game=chess'}},
 {{text="لعبة فلابي بيرد 🐥",url='https://t.me/awesomebot?game=FlappyBird'},{text="تحداني فالرياضيات 🔢",url='https://t.me/gamebot?game=MathBattle'}},
