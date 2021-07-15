@@ -11218,7 +11218,7 @@ send(msg.chat_id_, msg.id_,'*꙳.︙تم تفعيل الالعاب الاحتر�
 end
 if text == 'العاب كايلي' and Special(msg) then  
 if not database:get(bot_id..'lockGeamVip'..msg.chat_id_) then
-_key = {
+keyboard.inline_keyboard = {
 {{text="♟ Chess Game ♟",url='https://t.me/PZ6bot?game=chess'}},
 {{text="لعبة فلابي بيرد 🐥",url='https://t.me/awesomebot?game=FlappyBird'},{text="تحداني فالرياضيات 🔢",url='https://t.me/gamebot?game=MathBattle'}},
 {{text="تحداني في ❌⭕️",url='t.me/XO_AABOT?start3836619'},{text="سباق الدراجات 🏍",url='https://t.me/gamee?game=MotoFX'}},
