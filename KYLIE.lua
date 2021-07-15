@@ -11218,6 +11218,11 @@ send(msg.chat_id_, msg.id_,'*꙳.︙تم تفعيل الالعاب الاحتر�
 end
 if text == 'العاب كايلي' and Special(msg) then  
 if not database:get(bot_id..'lockGeamVip'..msg.chat_id_) then
+end
+local Teext =[[
+𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙜𝙖𝙢𝙚𝙨 𝙆𝙮𝙡𝙞𝙚 .
+]]
+keyboard = {} 
 keyboard.inline_keyboard = {
 {{text="♟ Chess Game ♟",url='https://t.me/PZ6bot?game=chess'}},
 {{text="لعبة فلابي بيرد 🐥",url='https://t.me/awesomebot?game=FlappyBird'},{text="تحداني فالرياضيات 🔢",url='https://t.me/gamebot?game=MathBattle'}},
