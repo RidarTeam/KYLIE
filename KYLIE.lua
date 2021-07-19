@@ -9934,12 +9934,37 @@ end
 send(msg.chat_id_, msg.id_,'\n ꙳.︙صلاحيات البوت هي\n⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆\n꙳.︙علامة ال {✔️} تعني مفعل\n꙳.︙علامة ال {✖} تعني غير مفعل\n⋆ ┉  ┉  ┉  ┉ ┉  ┉  ┉  ┉ ⋆\n꙳.︙تغير معلومات المجموعة ↞ '..INf..'\n꙳.︙حذف الرسائل ↞ '..DEL..'\n꙳.︙حظر المستخدمين ↞ '..REs..'\n꙳.︙دعوة المستخدمين ↞ '..INv..'\n꙳.︙ثتبيت الرسالة ↞ '..Pin..'\n꙳.︙اضافة مشرفين ↞ '..PRo)   
 end
 end
+if text == 'تعطيل اليوتيوب' and Constructor(msg) then  
+send(msg.chat_id_,msg.id_,'\n*꙳.︙تم تعطيل اليوتيوب*')  
+database:set(bot_id.."dl_yt_dl"..msg.chat_id_,"close") 
+return false  
+end 
+if text == 'تفعيل اليوتيوب' and Constructor(msg) then  
+send(msg.chat_id_,msg.id_,'\n*꙳.︙تم تفعيل اليوتيوب*')  
+database:set(bot_id.."dl_yt_dl"..msg.chat_id_,"open") 
+return false  
+end
+if text and text:match('^بصمه (.*)$')  and database:get(bot_id.."dl_yt_dl"..msg.chat_id_) == "open" then            
+local Ttext = text:match('^بصمه (.*)$') 
+local InfoSearch = https.request('https://mode-dev.tk/tg/search.php?search='..URL.escape(Ttext))
+local JsonSearch = JSON.decode(InfoSearch)
+for k,vv in pairs(JsonSearch.results) do
+if k == 1 then
+local GetStart = io.popen('downloadsh '..vv.url):read('*all')
+if GetStart and GetStart:match('(.*)oksend(.*)') then
+print('download Mp3 done ...\nName : '..vv.title..'\nIdLink : '..vv.url)
+sendVoice(msg.chat_id_, msg.id_, 0, 1, nil,'./'..vv.url..'.mp3',vv.title,'- '..vv.title..'\n- @Bomber','@Bomber')  
+os.execute('rm -rf ./'..vv.url..'.mp3') 
+end
+end
+end
+end
 if text == "تعطيل الانستا" and Manager(msg) then
-send(msg.chat_id_, msg.id_, '꙳. تم تعطيل الانستا')
+send(msg.chat_id_, msg.id_, '*꙳.︙تم تعطيل الانستا*')
 database:set(bot_id.."ppppd:insta_bot"..msg.chat_id_,"close")
 end
 if text == "تفعيل الانستا" and Manager(msg) then
-send(msg.chat_id_, msg.id_,'꙳. تم تفعيل الانستا')
+send(msg.chat_id_, msg.id_,'*꙳.︙تم تفعيل الانستا*')
 database:set(bot_id.."ppppd:insta_bot"..msg.chat_id_,"open")
 end
 if text and text:match("^معلومات (.*)$") and database:get(bot_id.."ppppd:insta_bot"..msg.chat_id_) == "open" then
