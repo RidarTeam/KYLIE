@@ -2983,12 +2983,12 @@ send(msg.chat_id_, msg.id_,' *꙳.︙بواسطه »* ['..Rutba(msg.sender_user_
 end,nil)   
 end
 if text == "تعطيل المسح التلقائي" and Owner(msg) and GetSourseMember(msg) then        
-database:set(bot_id.."MODE7:allM"..msg.chat_id_,true)
+database:set(bot_id.."y:msg:media"..msg.chat_id_,true)
 Reply_Status(msg,msg.sender_user_id_,"lock",'*꙳.︙تم تعطيل المسح التلقائي للميديا*')
 return false
 end 
 if text == "تفعيل المسح التلقائي" and Owner(msg) and GetSourseMember(msg) then        
-database:del(bot_id.."MODE7:allM"..msg.chat_id_)
+database:del(bot_id.."y:msg:media"..msg.chat_id_)
 Reply_Status(msg,msg.sender_user_id_,"lock",'*꙳.︙تم تفعيل المسح التلقائي للميديا*')
 return false
 end 
@@ -10150,7 +10150,7 @@ return false
 end
 if text == 'بوت' then
 Namebot = (database:get(bot_id..'Name:Bot') or 'كايلي')
-send(msg.chat_id_, msg.id_,'*اسمـَيہ ['..Namebot..'] *')
+send(msg.chat_id_, msg.id_,'*اسمـَيہ '..Namebot..' *')
 end
 if text == 'الاحصائيات' then
 if Sudo(msg) then 
