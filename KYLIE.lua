@@ -2984,12 +2984,12 @@ end,nil)
 end
 if text == "تعطيل المسح التلقائي" and Owner(msg) and GetSourseMember(msg) then        
 database:set(bot_id.."y:msg:media"..msg.chat_id_,true)
-Reply_Status(msg,msg.sender_user_id_,"lock",'*꙳.︙تم تعطيل المسح التلقائي للميديا*')
+Reply_Status(msg,msg.sender_user_id_,"lock",'• تم تعطيل المسح التلقائي للميديا')
 return false
 end 
 if text == "تفعيل المسح التلقائي" and Owner(msg) and GetSourseMember(msg) then        
 database:del(bot_id.."y:msg:media"..msg.chat_id_)
-Reply_Status(msg,msg.sender_user_id_,"lock",'*꙳.︙تم تفعيل المسح التلقائي للميديا*')
+Reply_Status(msg,msg.sender_user_id_,"lock",'• تم تفعيل المسح التلقائي للميديا')
 return false
 end 
 if text == 'تفعيل نسبه الحب' and Manager(msg) then   
@@ -10150,7 +10150,7 @@ return false
 end
 if text == 'بوت' then
 Namebot = (database:get(bot_id..'Name:Bot') or 'كايلي')
-send(msg.chat_id_, msg.id_,'*اسمـَيہ '..Namebot..' *')
+send(msg.chat_id_, msg.id_,'*اسمي الكيوت ['..Namebot..'] *')
 end
 if text == 'الاحصائيات' then
 if Sudo(msg) then 
