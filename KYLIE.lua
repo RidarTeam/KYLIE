@@ -2982,16 +2982,6 @@ tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,dat
 send(msg.chat_id_, msg.id_,' *꙳.︙بواسطه »* ['..Rutba(msg.sender_user_id_,msg.chat_id_)..'](T.ME/'..(data.username_ or 'ppppd')..') \n *꙳.︙تـم فتح المعرفات *')
 end,nil)   
 end
-if text == "تعطيل المسح التلقائي" and Owner(msg) and GetSourseMember(msg) then        
-database:set(bot_id.."y:msg:media"..msg.chat_id_,true)
-Reply_Status(msg,msg.sender_user_id_,"lock",'• تم تعطيل المسح التلقائي للميديا')
-return false
-end 
-if text == "تفعيل المسح التلقائي" and Owner(msg) and GetSourseMember(msg) then        
-database:del(bot_id.."y:msg:media"..msg.chat_id_)
-Reply_Status(msg,msg.sender_user_id_,"lock",'• تم تفعيل المسح التلقائي للميديا')
-return false
-end 
 if text == 'تفعيل نسبه الحب' and Manager(msg) then   
 if database:get(bot_id..'Cick:lov'..msg.chat_id_) then
 Text = '* ꙳.︙تم تفعيل نسبه الحب*'
@@ -10143,7 +10133,7 @@ end
 if text == ""..(database:get(bot_id..'Name:Bot') or 'كايلي').." غادر" or text == 'بوت غادر' then  
 if Sudo(msg) and not database:get(bot_id..'Left:Bot'..msg.chat_id_)  then 
 tdcli_function ({ID = "ChangeChatMemberStatus",chat_id_=msg.chat_id_,user_id_=bot_id,status_={ID = "ChatMemberStatusLeft"},},function(e,g) end, nil) 
-send(msg.chat_id_, msg.id_,' ꙳.︙تم مغادرة الكروب') 
+send(msg.chat_id_, msg.id_,'* ꙳.︙تم مغادرة الكروب*') 
 database:srem(bot_id..'Chek:Groups',msg.chat_id_)  
 end
 return false  
