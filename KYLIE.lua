@@ -3996,6 +3996,7 @@ if text == "مسح الملفات" and Devmode(msg) then
 os.execute("rm -fr File_Bot/*")
 send(msg.chat_id_,msg.id_," ꙳.︙تم مسح الملفات")
 return false
+end
 if text == ("رفع مطور") and msg.reply_to_message_id_ and Devmode(msg) then
 function start_function(extra, result, success)
 if AddChannel(msg.sender_user_id_) == false then
