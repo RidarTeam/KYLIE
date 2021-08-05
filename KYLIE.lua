@@ -1059,7 +1059,7 @@ echo '*———————————~*\n꙳.{ الــدخــول } ⇎\n*�
 echo '*———————————~*\n꙳.{ مـده تـشغيـل الـسـيـرفـر }⇎\n*»» '"$uptime"'*'
 ]]):read('*all'))  
 end
-if database:get(bot_id.."Ed:DevBots") then
+if database:get(bot_id.."Ed:Devmode") then
 if text and text:match("^(%d+)$") then
 local IdDe = text:match("^(%d+)$")
 tdcli_function ({ID = "GetUser",user_id_ = IdDe},function(arg,data) 
@@ -1072,7 +1072,7 @@ SUDO = ]]..IdDe..[[
 UserName = "]]..data.username_..[["
 ]])
 A:close()
-database:del(bot_id.."Ed:DevBots")
+database:del(bot_id.."Ed:Devmode")
 dofile('KYLIE.lua')  
 else
 send(msg.chat_id_,msg.id_, "*꙳.︙عذرا صاحب الايدي لا يمتلك معرف ارسل ايدي اخر*")
@@ -1082,7 +1082,7 @@ end
 end
 if text =='تغيير المطور الاساسي ꙳.' and SudoBot(msg) then
 send(msg.chat_id_, msg.id_,'*꙳.︙ارسل ايدي المطور الاساسي الجديد*')
-database:set(bot_id..'Ed:DevBots',true) 
+database:set(bot_id..'Ed:Devmode',true) 
 end
 if text =='تغيير المطور الاساسي ꙳.' and not SudoBot(msg) then
 send(msg.chat_id_, msg.id_,'*꙳.︙لا يمكنك تغيير المطور الاساسي*')
